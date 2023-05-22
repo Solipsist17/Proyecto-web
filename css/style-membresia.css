@@ -1,0 +1,53 @@
+
+.Membresia {
+  margin: 55px auto;
+  margin-bottom: 0;
+  width: 350px;
+  height: 510px;
+  background-color: rgb(141, 254, 159);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.Membresia img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+.Membresia-info {
+  padding: 20px;
+}
+.Membresia-info h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+.Membresia-info b {
+  font-size: 16px;
+}
+.boton {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+.boton-secundario {
+  background-color: rgba(234, 97, 97, 0.925);
+  color: black;
+}
+.videoMem {
+  margin: 55px auto;
+  width: 660px; 
+  height: 415px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  align-items: center;
+}
+
+footer {
+  margin-top: 100%;
+}

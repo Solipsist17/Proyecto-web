@@ -1,0 +1,36 @@
+.sobre-nosotros {
+    padding: 4rem;
+}
+
+.sobre-nosotros h2 {
+    text-align: center;
+}
+
+.spot-publicitario {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mision-texto{
+    padding: 4rem;
+}
+.mision-texto{
+    
+    text-align: center;
+}
+.gif-mision{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.vision-texto{
+    padding: 4rem;
+}
+.vision-texto{
+    
+    text-align: center;
+}
+.gif-vision{
+    width: fit-content;
+    margin: 0 auto;
+}

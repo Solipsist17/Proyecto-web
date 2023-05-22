@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: rgba(87, 225, 235, 0.888);
+    /* background-color: antiquewhite; */
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    /* height: fit-content; */
+}
+
+.box {
+    position: relative; /* La posición de sus elementos hijos se establecerá en relación a este */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box img{
+    width: 150px;
+    height: 125px;
+}
+
+.box nav {
+    position: absolute; /* Su posición será absoluta dentro de la página y se podrá ajustar con top,left,right,bottom */
+    width: fit-content;
+    top: 20%;
+    right: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline; /* Los elementos se acomodan en línea */ 
+    margin-left: 2rem;
+}
+
+nav a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    transition: 0.35s;
+}
+
+nav a:hover {
+    color: coral;
+}
+
+/*Color de los parrafos de mision y vision*/
+#mision {
+    background-color: #fce6f5;
+    padding: 20px;
+    }
+#vision {
+    background-color: #fce6f5;
+    padding: 20px;
+}
+
+    /* FOOTER */
+    
+footer {
+    background-color: rgb(81, 252, 252);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+}
+
+footer .redes-sociales {
+   /*  width: fit-content; */
+   margin-left: 85%;
+   /* text-align: right; */
+   
+}
+
+.redes-sociales a {
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+}
+
+.redes-sociales a:hover {
+    color: coral;
+}
+
+.redes-sociales ul {
+    list-style: none;
+    padding: 0;
+}
+
+/*Alineacion de simbolos*/
+/* .youtube-simbolo{
+    float: left;
+}
+.instagram-simbolo{
+    float: left;
+}
+.facebook-simbolo{
+    float: left;
+}
+.twitter-simbolo{
+    float: left;
+} */
+
+.redes-sociales li {
+    margin-bottom: 0.25rem;
+    /* display: inline; */
+    /* padding-left: 1rem; */
+}
+
+footer .derechos-reservados {
+    padding-bottom: 0.5;
+    text-align: left;
+}
+
