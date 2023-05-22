@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background-color: rgba(87, 225, 235, 0.888);
+    background-color: black;
     /* background-color: antiquewhite; */
     width: 100%;
     padding: 20px 0;
@@ -38,7 +38,7 @@ nav li {
 nav a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: black;
+    color: white;
     transition: 0.35s;
 }
 
@@ -48,18 +48,19 @@ nav a:hover {
 
 /*Color de los parrafos de mision y vision*/
 #mision {
-    background-color: #fce6f5;
+    
     padding: 20px;
     }
 #vision {
-    background-color: #fce6f5;
+    
     padding: 20px;
 }
 
     /* FOOTER */
     
 footer {
-    background-color: rgb(81, 252, 252);
+    margin: 0;
+    background-color: black;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
     padding: 2rem;
 }
@@ -73,7 +74,7 @@ footer .redes-sociales {
 
 .redes-sociales a {
     width: fit-content;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -107,6 +108,7 @@ footer .redes-sociales {
 }
 
 footer .derechos-reservados {
+    color: white;
     padding-bottom: 0.5;
     text-align: left;
 }
