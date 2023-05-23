@@ -1,3 +1,11 @@
+.informacion-marquee {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  font-weight: bolder;
+  line-height: 6.5rem;
+  color: #5c5c5c;
+}
+
 
 .Membresia {
   margin: 55px auto;
@@ -48,6 +56,12 @@
   align-items: center;
 }
 
-footer {
-  margin-top: 100%;
+.especialistas-container {
+  width: 80%;
+  margin: 10% auto;
 }
+
+.especialistas-container table {
+  margin: 0 auto;
+}
+
