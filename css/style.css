@@ -1,14 +1,22 @@
 body {
     margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+    background: radial-gradient(#333, #1a1a1a);
 }
 
+
+
 header {
-    background-color: black;
+    /* background-color: black; */
     /* background-color: antiquewhite; */
     width: 100%;
     padding: 20px 0;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5); */
     /* height: fit-content; */
+
+    
 }
 
 .box {
@@ -36,32 +44,34 @@ nav li {
 }
 
 nav a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: white;
     transition: 0.35s;
 }
 
 nav a:hover {
-    color: coral;
+    color: silver;
+    font-size: 1.4rem;
 }
 
 /*Color de los parrafos de mision y vision*/
-#mision {
+/* #mision {
     
     padding: 20px;
     }
 #vision {
     
     padding: 20px;
-}
+} */
 
     /* FOOTER */
     
 footer {
     margin: 0;
-    background-color: black;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 7rem;
+    background-color: #161618;
+    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5); */
     padding: 2rem;
 }
 
@@ -79,7 +89,7 @@ footer .redes-sociales {
 }
 
 .redes-sociales a:hover {
-    color: coral;
+    color: silver;
 }
 
 .redes-sociales ul {
