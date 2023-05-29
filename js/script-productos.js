@@ -22,6 +22,8 @@ productoContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     });
 });
+
+
 /*Rodrigo agrego esto*/
 let mostrador = document.getElementById("mostrador");
 let seleccion = document.getElementById("seleccion");
