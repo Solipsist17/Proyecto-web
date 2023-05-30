@@ -42,26 +42,31 @@
       </main> -->
  
       <!-- <h2>Equipamiento de entrenamiento</h2> -->
+      <nav class="Categorías">
+        <ul>
+          <li><a>Categoría 1</a></li>
+          <li>|</li>
+          <li><a>Categoría 2</a></li>
+          <li>|</li>
+          <li><a>Categoría 3</a></li>
+        </ul>
+      </nav>
 
-      <section class="producto">
+
+      <section class="producto-banner" id="producto-banner">
         <h2 class="producto-categoria">Más vendidos</h2>
         <button class="pre-btn"><img src="../img/Productos/arrow.png" alt=""></button>
         <button class="nxt-btn"><img src="../img/Productos/arrow.png" alt=""></button>
         
         
         <div class="producto-container">
-          <div class="producto-card">
+
+          <!-- <div class="producto-card">
             <div class="producto-img">
               <span class="descuento-tag">50% off</span>
               <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
-              <h2 class="producto-marca">marca</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/60</span>
-              <span class="precio-actual">S/120</span>
-            </div> -->
           </div>
 
           <div class="producto-card">
@@ -70,12 +75,6 @@
               <img src="../img/Productos/banco-ejercicios.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
-              <h2 class="producto-marca">marca</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/60</span>
-              <span class="precio-actual">S/120</span>
-            </div> -->
           </div>
 
           <div class="producto-card">
@@ -84,12 +83,6 @@
               <img src="../img/Productos/bandas_elasticas.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
-              <h2 class="producto-marca">marca</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/60</span>
-              <span class="precio-actual">S/120</span>
-            </div> -->
           </div>
 
           <div class="producto-card">
@@ -98,12 +91,6 @@
               <img src="../img/Productos/chaleco_de_peso.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
-              <h2 class="producto-marca">marca</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/60</span>
-              <span class="precio-actual">S/120</span>
-            </div> -->
           </div>
 
           <div class="producto-card">
@@ -112,12 +99,6 @@
               <img src="../img/Productos/bicicleta.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
-              <h2 class="producto-marca">marca</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/60</span>
-              <span class="precio-actual">S/120</span>
-            </div> -->
           </div>
 
           <div class="producto-card">
@@ -126,26 +107,131 @@
               <img src="../img/Productos/caminadora.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-            <!-- <div class="producto-info">
+          </div> -->
+          
+        </div>
+      </section>
+
+      <!-- <h2>Suplementos nutricionales</h2> -->
+      <!-- <h2>Equipamiento deportivo</h2> -->
+      <section class="producto" id="producto">
+        <h2 class="producto-categoria">Equipamiento deportivo</h2>
+
+        <div class="producto-container">
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
               <h2 class="producto-marca">marca</h2>
               <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
               <span class="precio">S/60</span>
               <span class="precio-actual">S/120</span>
-            </div> -->
+            </div>
           </div>
-        </div>
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
+              <h2 class="producto-marca">marca</h2>
+              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
+              <span class="precio">S/60</span>
+              <span class="precio-actual">S/120</span>
+            </div>
+          </div>
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
+              <h2 class="producto-marca">marca</h2>
+              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
+              <span class="precio">S/60</span>
+              <span class="precio-actual">S/120</span>
+            </div>
+          </div>
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
+              <h2 class="producto-marca">marca</h2>
+              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
+              <span class="precio">S/60</span>
+              <span class="precio-actual">S/120</span>
+            </div>
+          </div>
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
+              <h2 class="producto-marca">marca</h2>
+              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
+              <span class="precio">S/60</span>
+              <span class="precio-actual">S/120</span>
+            </div>
+          </div>
+          <div class="producto-card">
+            <div class="producto-img">
+              <span class="descuento-tag">50% off</span>
+              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
+            </div>
+            <div class="producto-info">
+              <h2 class="producto-marca">marca</h2>
+              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
+              <span class="precio">S/60</span>
+              <span class="precio-actual">S/120</span>
+            </div>
+          </div>
+        </div>  
       </section>
 
-      <!-- <div class="test-container">
-        <div class="test-contenido">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolore quae eius nobis. Necessitatibus ipsam dignissimos ab sit dolorum porro.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolore quae eius nobis. Necessitatibus ipsam dignissimos ab sit dolorum porro.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolore quae eius nobis. Necessitatibus ipsam dignissimos ab sit dolorum porro.</p>
-        </div>
-      </div> -->
+      <div class="seleccion" id="seleccion">
+        <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
+      </div>
 
-      <h2>Suplementos nutricionales</h2>
-      <section class="contenido">
+
+      <!-- <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img src="../img/Productos/1.png" alt="" id="img">
+            <h2 id="modelo">NIKE MODEL 1</h2>
+            <p id="descripcion">Descripción Modelo 1</p>
+
+            <span class="precio" id="precio">$ 130</span>
+
+            <div class="fila">
+                <div class="size">
+                    <label for="">SIZE</label>
+                    <select name="" id="">
+                        <option value="">40</option>
+                        <option value="">42</option>
+                        <option value="">44</option>
+                        <option value="">46</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+        </div>
+    </div> -->
+
+
+      <!-- <section class="contenido">
         <div class="mostrador" id="mostrador">
             <div class="fila">
                 <div class="item" onclick="cargar(this)">
@@ -208,9 +294,9 @@
                     <span class="precio">$ 1.800</span>
                 </div>
             </div> 
-        </div>
-        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-        <div class="seleccion" id="seleccion">
+        </div> -->
+        
+        <!-- <div class="seleccion" id="seleccion">
             <div class="cerrar" onclick="cerrar()">
                 &#x2715
             </div>
@@ -235,7 +321,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
       <script src="../js/script-productos.js"></script>
        

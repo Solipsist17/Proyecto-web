@@ -1,4 +1,4 @@
-.producto {
+.producto-banner {
     position: relative;
     overflow: hidden;
     padding: 20px;
@@ -82,7 +82,7 @@
     color: #fff;
 }
 
-/* .producto-info {
+.producto-info {
     width: 100%;
     padding-top: 10px;
 }
@@ -111,7 +111,7 @@
     margin-left: 20px;
     opacity: 0.5;
     text-decoration: line-through;
-} */
+}
 /*  */
 .pre-btn, .nxt-btn {
     border: none;
@@ -125,6 +125,8 @@
     /* background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff, 100%); */
     cursor: pointer;
     z-index: 9;
+    /* opacity: 0; */
+    /* background-color: #333; */
 }
 
 .pre-btn {
@@ -144,6 +146,41 @@
     opacity: 1;
 }
 
+/* SECCION PRODUCTOS */
+
+.producto .producto-container {
+    overflow: hidden;
+    display: grid;
+    /* overflow-y: auto; 
+    overflow-x: hidden; */
+    margin: 0;
+    padding: 0;
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 60px; 
+    column-gap: 60px;
+    /* justify-content: center; */
+    justify-items: center;
+    /* margin-left: 5rem; */
+    
+    height: 100%;
+}
+
+.producto .producto-card {
+    margin: 0;
+    padding: 0;
+
+    height: fit-content;
+    border-style: solid;
+    border-color: #707070;
+}
+
+.producto .producto-info {
+    padding: 1rem;
+}
+
+
 /*Rodrigo agrego esto*/
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
 *{
@@ -152,7 +189,7 @@
     box-sizing: border-box;
     font-family: 'Open Sans';
 } */
-.contenido{
+/* .contenido{
     max-width: 100%;
     width: 100%;
     margin: 40px auto;
@@ -173,7 +210,6 @@
     max-width: 210px;
     padding: 30px;
     height: 250px;
-    /*border: 2px solid red;*/
     text-align: center;
     margin: 0 10px;
     cursor: pointer;
@@ -195,17 +231,20 @@
     color: #f85151;
     font-weight: bold;
     font-size: 20px;
-}
+} */
 .seleccion{
     transition: .5s ease;
     opacity: 0;
     width: 0%;
     border: 1px solid #ccc;
-    position: relative;
+    position: absolute;
+    right: 0;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    background-color: #ccc;
 }
 .cerrar{
     position: absolute;
