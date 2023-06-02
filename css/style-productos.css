@@ -5,13 +5,15 @@
 }
 
 .producto-categoria {
-    padding: 0 0.1rem;
+    padding: 0 0.1em;
     font-size: 2rem;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 1.1rem;
     text-transform: capitalize;
     margin-left: 5rem;
+    /*background-color: #333;
+    border: 1px solid red;*/
 }
 
 .producto-container {
@@ -115,6 +117,7 @@
 /*  */
 .pre-btn, .nxt-btn {
     border: none;
+    border-radius: 30px;
     width: 5rem;
     height: 100%;
     position: absolute;
@@ -125,21 +128,32 @@
     /* background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff, 100%); */
     cursor: pointer;
     z-index: 9;
+    
     /* opacity: 0; */
-    /* background-color: #333; */
+     background-color: #ffffff; 
 }
 
 .pre-btn {
     left: 0;
     transform: rotate(180deg);
 }
-
+.pre-btn:hover{
+    padding: 30px; 
+    background:#1a1a1a; 
+    color: white; 
+}
 .nxt-btn {
+    
     right: 0;
 }
-
+.nxt-btn:hover{
+    padding: 30px; 
+    background:#1a1a1a; 
+    color: white; 
+}
 .pre-btn img, .nxt-btn img {
-    opacity: 0.2;
+    
+    opacity: 1;
 }
 
 .pre-btn:hover img, .nxt-btn:hover img {
