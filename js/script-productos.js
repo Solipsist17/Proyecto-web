@@ -1,4 +1,6 @@
+
 /* Agregamos los productos dinámicamente */
+
 let productos = ["../img/Productos/mancuerna-20kg1.jpg", "../img/Productos/banco-ejercicios.jpg", "../img/Productos/bandas_elasticas.jpg", "../img/Productos/chaleco_de_peso.jpg", "../img/Productos/bicicleta.jpg", "../img/Productos/caminadora.jpg"];
 
 
@@ -26,51 +28,64 @@ for (let i=0; i<productos.length; i++){
 
     container.appendChild(cardDiv);
 }
+    
 
 
 /* Slider en productos  */
-/* let productoContainers = [];
-for(let i = 0; i<document.querySelectorAll(".producto-container").length; i++ ){
-    let elemento = document.querySelectorAll(".producto-container")[i];
-    productoContainers.push(elemento);
-} */
 
 const productoContainers = [...document.querySelectorAll(".producto-container")];
 
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
-
+       
 productoContainers.forEach((item, i) => {
     let containerDimensiones = item.getBoundingClientRect();
     let containerWidth = containerDimensiones.width;
-    
+    console.log(i);
+    console.log(item);
     nxtBtn[i].addEventListener("click", () => {
         item.scrollLeft += containerWidth;
-        
     });
-
+    
     preBtn[i].addEventListener("click", () => {
-        item.scrollLeft -= containerWidth;
+    item.scrollLeft -= containerWidth;
     });
 });
-
-/*  */
-/* let mostrador = document.getElementById("producto");
-let seleccion = document.getElementById("seleccion");
-let imgSeleccioada = document.getElementById("img"); */
-
+    
+    
+        
+/* Carrito de compras */
+let numProductos = 0;
 
 function cargar(item) {
+
     let body = document.body;
     let mostrador = document.getElementById("producto");
     let banner = document.getElementById("producto-banner");
     let seleccion = document.getElementById("seleccion");
-    let imgSeleccionada = document.getElementById("img");
+    /* let cerrar = document.getElementById("cerrar"); */
+    let imgSeleccionada = document.getElementById("imgSeleccionada");
 
-    console.log("Se clickeó el botón");
+    /* ESTO SE VA A IMPLEMENTAR (agregar los productos y que se guarden en el carrito) */
+    
+    /* console.log("Se clickeó el botón");
+    if (item != null) {
+        numProductos++;
+        console.log("La cantidad de productos seleccionados: " + numProductos);
+    } */
+
+
     /* mostrador.style.width = "60%"; */
     seleccion.style.width = "40%";
     seleccion.style.opacity = "1";
+    console.log();
+    console.log(item.parentNode.getElementsByClassName("producto-miniatura")[0]);
+    imgSeleccionada.src = item.parentNode.getElementsByClassName("producto-miniatura")[0].src;
+    imgSeleccionada.style.height = "100%"/* "100px" */;
+    imgSeleccionada.style.width = "100%"/* "150px" */;
+    imgSeleccionada.style.border = "solid";
+    /* imgSeleccionada.style. */
+    /* cerrar.style.opacity = "1"; */
 
     body.style.overflow = "hidden"; /* Bloqueamos el scroll */
 
@@ -78,10 +93,23 @@ function cargar(item) {
     banner.style.opacity = "0.4";
 
     let rect = item.getBoundingClientRect(); 
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let posicionVertical = scrollTop;
+    let posicionVertical = window.pageYOffset || document.documentElement.scrollTop;
     console.log(posicionVertical);
     seleccion.style.top = posicionVertical + "px";
+
+    /* cerrar.addEventListener("click", cerrar(mostrador, seleccion)); */
+}
+
+function cerrar() {
+    let body = document.body;
+    let mostrador = document.getElementById("producto");
+    let seleccion = document.getElementById("seleccion");
+    let banner = document.getElementById("producto-banner");
+    mostrador.style.width = "100%";
+    seleccion.style.width = "0%";
+    mostrador.style.opacity = "1";
+    banner.style.opacity = "1";
+    body.style.overflow = "auto";
 }
 
 /*Rodrigo agrego esto*/
