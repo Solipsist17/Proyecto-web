@@ -13,11 +13,11 @@
     transition: 0.5s ease;
 }
 
-.galeria img:hover {
+/* .galeria img:hover {
     width: 300px;
     opacity: 1;
     filter: contrast(120%);
-}
+} */
 
 .eslogan {
     position: absolute;

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/Fuente_css.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-home.css">
@@ -31,95 +32,64 @@
           </nav>
       </div> 
   </header>
-  <h1>PROXIMAMENTE</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maiores est similique odit ullam nemo nisi nostrum dolorem impedit minus! Dolores suscipit quasi commodi odio.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maiores est similique odit ullam nemo nisi nostrum dolorem impedit minus! Dolores suscipit quasi commodi odio.</p>
-    <!-- </header>
-      <section class="form-register">
-      <h2>CONTÁCTATE CON NOSOTROS</h2>
-      <p>Puedes ponerte en contacto con nosotros en el siguiente formulario:</p>
-      <fieldset>
-        <br>
-        <legend>Formulario de contacto</legend>
-        <br>
-        <form>
-          <label for="nombres">Nombres:</label>
-          <input class="controls"
-            type="text"kk
-            id="nombres"
-            name="nombres"
-            placeholder="Juan Perez"
-            maxlength="30"
-            required
-          /><br /><br />
-          <label for="email">Email:</label>
-          <input class="controls"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Juan@gmail.com"
-            maxlength="30"
-          /><br /><br />
-          <label for="telefono">Teléfono:</label>
-          <input class="controls"
-            type="number"
-            name="telefono"
-            id="telefono"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            minlength="9"
-            required
-            placeholder="987141242"
-          />
-          <br /><br />
-          <label for="radioGroup1">Seleccione su Género:</label><br />
-          <input class="controls"
-            type="radio"
-            id="radioGroup1"
-            name="radioGroup1"
-            value="Masculino"
-          />
-          Masculino<br />
-          <input class="controls"
-            type="radio"
-            id="radioGroup1"
-            name="radioGroup1"
-            value="Femenino"
-          />
-          Femenino<br />
-          <input class="controls"
-            type="radio"
-            id="radioGroup1"
-            name="radioGroup1"
-            value="Otro"
-          />
-          Otro<br /><br />
-          <label for="checkbox1">Solicito información sobre:</label><br />
-          <input class="controls" type="checkbox" id="checkbox1" name="checkbox1" />Membresía vip
-          básico<br />
-          <input class="controls" type="checkbox" id="checkbox1" name="checkbox1" />Membresía vip
-          pro<br />
-          <input class="controls" type="checkbox" id="checkbox1" name="checkbox1" />Especialista
-          en Nutrición<br />
-          <input class="controls" type="checkbox" id="checkbox1" name="checkbox1" />Especialista
-          en Ejercicios<br />
-          <input class="controls" type="checkbox" id="checkbox1" name="checkbox1" />Especialista
-          en Yoga<br /><br />
-          <label for="mensaje">Mensaje:</label><br />
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            placeholder="Comentario..."
-            maxlength="50"
-          ></textarea
-          ><br /><br />
-          <input class="botons" type="submit" value="Enviar" />
-          <input class="botons" type="reset" value="Cancelar" />
-        </form>
-      </fieldset>
-      </section>
-
-
-    <br /><br /> -->
+  <main>
+    <div class="container-form sign-up">
+      <div class="welcome-back">
+          <div class="message">
+              <h2>Bienvenido a Gym Herculiano</h2>
+              <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+              <button class="sign-up-btn">Iniciar Sesion</button>
+          </div>
+      </div>
+      <form class="formulario">
+          <h2 class="create-account">Crear una cuenta</h2>
+          <div class="iconos">
+              <div class="border-icon">
+                  <i class='bx bxl-instagram'></i>
+              </div>
+              <div class="border-icon">
+                <i class='bx bxl-facebook-circle' ></i>
+              </div>
+              <div class="border-icon">
+                  <i class='bx bxl-twitter'></i>
+              </div>
+          </div>
+          <p class="cuenta-gratis">Crear una cuenta gratis</p>
+          <input type="text" placeholder="Nombre">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Contraseña">
+          <input type="button" value="Registrarse">
+      </form>
+  </div>
+  <div class="container-form sign-in">
+      <form class="formulario">
+          <h2 class="create-account">Iniciar Sesion</h2>
+          <div class="iconos">
+              <div class="border-icon">
+                <box-icon name='instagram' type='logo' ></box-icon>
+              </div>
+              <div class="border-icon">
+                  <i class='bx bxl-linkedin' ></i>
+              </div>
+              <div class="border-icon">
+                  <i class='bx bxl-facebook-circle' ></i>
+              </div>
+          </div>
+          <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Contraseña">
+          <input type="button" value="Iniciar Sesion">
+      </form>
+      <div class="welcome-back">
+          <div class="message">
+              <h2>Bienvenido de nuevo</h2>
+              <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+              <button class="sign-in-btn">Registrarse</button>
+          </div>
+      </div>
+  </div>
+  </main>
+  <script src="../js/Formulario_js.js"></script>
 
     <footer>
       <div class="logo_footer">

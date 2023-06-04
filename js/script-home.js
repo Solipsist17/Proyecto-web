@@ -1,4 +1,4 @@
-let imgs_inicio = new Array ( "../img/Inicio/imagen_menu1.jpg", 
+/* let imgs_inicio = new Array ( "../img/Inicio/imagen_menu1.jpg", 
 "../img/Inicio/imagen_menu2.jpg", 
 "../img/Inicio/imagen_menu3.jpg", 
 "../img/Inicio/imagen_menu4.jpg", 
@@ -23,7 +23,7 @@ do{
     container.appendChild(imageDiv);
 
     i++;
-}while (i<imgs_inicio.length);
+}while (i<imgs_inicio.length); */
 
 //INTENTO DE HACER CAMBIAR LAS IMAGENES
  /* function rotarImagenes()
