@@ -77,30 +77,80 @@ footer {
     /* position: relative;
     bottom: 0;
     width: 100%; */
-    background-color: #161618;
+    background-color: #000000;
     /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5); */
     padding: 2rem;
 }
+.logo_footer{
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+}
 
+.contactos {
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    
+ }
+.contactos ul{
+    list-style: none;
+    /* flex-direction: row; */
+    /* display: flex; */
+    flex: 1;
+ }
+
+/*  .contactos h2{
+    list-style: none; 
+    flex: 1;
+ } */
+
+ .contactos a{
+    text-decoration: none;
+    color: #f1f1f1;
+ }
+.contactos a:hover {
+    
+    color: silver;
+ }
+
+ .FAQ a{
+    text-decoration: none;
+    color: #f1f1f1;
+ }
 footer .redes-sociales {
    /*  width: fit-content; */
-   margin-left: 79%;
+   margin-left: 80%;
    /* text-align: right; */
    
 }
 
 .redes-sociales a {
-    width: fit-content;
-    color: white;
-    text-decoration: none;
+    
+ text-decoration: none;
+ font-size: 28px;
+ width: 60px;
+ height: 60px;
+ line-height: 60px;
+ text-align: center;
+ background: #333;
+ color: #f1f1f1;
+ border-radius: 50%;
+ box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+ transition: all .4s ease-in-out;
+
 }
 
 .redes-sociales a:hover {
-    color: silver;
+    color: rgb(255, 0, 0);
+    transform: scale(1.2);
 }
 
 .redes-sociales ul {
     list-style: none;
+    padding: 0;
+}
+
+.redes-sociales img {
     padding: 0;
 }
 
@@ -118,15 +168,24 @@ footer .redes-sociales {
     float: left;
 } */
 
-.redes-sociales li {
+.redes-sociales{ 
     margin-bottom: 0.25rem;
-    /* display: inline; */
+    /* display: block;  */
     /* padding-left: 1rem; */
-}
+    /* border-bottom: 1px solid #f1f1f1; */
+} 
 
-footer .derechos-reservados {
+footer .derechos-reservados  {
     color: white;
     padding-bottom: 0.5;
-    text-align: left;
+    /* margin-left: 1%; */
+    /* display: block;  */
+    width: 100%;
+    text-align: center;
+    /* background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom: 1px solid #f1f1f1;
 }
 
+/* .derechos-reservados small{
+
+} */
