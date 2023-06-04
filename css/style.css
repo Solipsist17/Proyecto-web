@@ -1,22 +1,17 @@
 body {
     margin: 0;
-    background-color: #1a1a1a;
+    padding: 0;
+    /* background-color: #1a1a1a; */
     font-family: 'Noto Sans', sans-serif;
     color: #fff;
     background: radial-gradient(#333, #1a1a1a);
 }
 
-
-
 header {
-    /* background-color: black; */
-    /* background-color: antiquewhite; */
     width: 100%;
     padding: 20px 0;
     /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5); */
     /* height: fit-content; */
-
-    
 }
 
 .box {
@@ -48,10 +43,12 @@ nav a {
     text-decoration: none;
     color: white;
     transition: 0.35s;
+    cursor: pointer;
 }
 
 nav a:hover {
-    color: silver;
+    /* color: rgb(1, 237, 255); */
+    color: #009688;
     font-size: 1.4rem;
 }
 
@@ -68,8 +65,14 @@ nav a:hover {
     /* FOOTER */
     
 footer {
+    position: relative;
+    /* left: 0; */
+    bottom: 0;
+    /* width: 100%; */
+    text-align: center;
+
     margin: 0;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     /* margin-bottom: 0; */
     /* position: relative;
     bottom: 0;
