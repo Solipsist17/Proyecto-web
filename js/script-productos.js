@@ -1,11 +1,11 @@
 
 /* Creamos los productos dinámicamente */
-let productosBanner = ["../img/Productos/mancuerna-20kg1.jpg", "../img/Productos/banco-ejercicios.jpg", "../img/Productos/bandas_elasticas.jpg", "../img/Productos/chaleco_de_peso.jpg", "../img/Productos/bicicleta.jpg", "../img/Productos/caminadora.jpg"];
+let productosBanner = ["../img/Productos/banner1.png", "../img/Productos/banner2.png", "../img/Productos/banner3.png"];
 
 let container = document.querySelector(".producto-container");
 
 for (let i=0; i<productosBanner.length; i++){
-    let cardDiv = document.createElement("div");
+    /* let cardDiv = document.createElement("div");
     cardDiv.className = "producto-card";
     let imgDiv = document.createElement("div");
     imgDiv.className = "producto-img";
@@ -25,6 +25,21 @@ for (let i=0; i<productosBanner.length; i++){
 
     cardDiv.appendChild(imgDiv);
 
+    container.appendChild(cardDiv); */
+
+    let cardDiv = document.createElement("div");
+    cardDiv.className = "producto-card";
+    cardDiv.style.width = "100%";
+    cardDiv.style.height = "100%";
+    let imgDiv = document.createElement("div");
+    imgDiv.className = "producto-img";
+    imgDiv.style.height = "100%";
+    let img = document.createElement("img");
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.src = productosBanner[i];
+    imgDiv.append(img);
+    cardDiv.appendChild(imgDiv);
     container.appendChild(cardDiv);
 }  
 
@@ -39,13 +54,17 @@ productoContainers.forEach((item, i) => {
     let containerDimensiones = item.getBoundingClientRect();
     let containerWidth = containerDimensiones.width;
     /* console.log(i); */
-    console.log(nxtBtn[i]);
+    /* let card = document.getElementsByClassName("producto-card")[0]; */
+    /* console.log(item.getElementsByClassName(".")); */
+    /* console.log(item.closest(".producto-card")); */
+    console.log(item);
+    console.log(containerWidth);
     nxtBtn[i].addEventListener("click", () => {
-        item.scrollLeft += containerWidth;
+        item.scrollLeft += /* 800 */  containerWidth;
     });
     
     preBtn[i].addEventListener("click", () => {
-    item.scrollLeft -= containerWidth;
+    item.scrollLeft -= /* 800 */  containerWidth;
     });
 });
 
@@ -72,21 +91,18 @@ function cargarMostrador(productos) {
         let productoImg = document.createElement("div");
         productoImg.className = "producto-img";
 
-        let descuentoTag = document.createElement("span");
+        /* let descuentoTag = document.createElement("span");
         descuentoTag.className = "descuento-tag";
-        descuentoTag.textContent = "50% off";
-        /* productoImg.appendChild(descuentoTag); */
+        descuentoTag.textContent = "50% off"; */
         let img = document.createElement("img");
         img.className = "producto-miniatura";
         img.src = productos[i].img;
-        /* productoImg.appendChild(img); */
         let btnAgregar = document.createElement("button");
         btnAgregar.className = "card-btn";
         btnAgregar.addEventListener("click", function() {
             cargar(this);
         });
         btnAgregar.textContent = "Agregar al carrito";
-        /* productoImg.appendChild(btnAgregar); */
         
         let productoInfo = document.createElement("div");
         productoInfo.className = "producto-info";
@@ -100,17 +116,17 @@ function cargarMostrador(productos) {
         let precio = document.createElement("span");
         precio.className = "precio";
         precio.textContent = "S/" + productos[i].precio.toFixed(2);
-        let precioActual = document.createElement("span");
+        /* let precioActual = document.createElement("span");
         precioActual.className = "precio-actual";
-        precioActual.textContent = "S/300.00";
+        precioActual.textContent = "S/300.00"; */
 
-        productoImg.appendChild(descuentoTag);
+        /* productoImg.appendChild(descuentoTag); */
         productoImg.appendChild(img);
         productoImg.appendChild(btnAgregar);
         productoInfo.appendChild(productoNombre);
         productoInfo.appendChild(productoDescripcion);
         productoInfo.appendChild(precio);
-        productoInfo.appendChild(precioActual);
+        /* productoInfo.appendChild(precioActual); */
 
         productoCard.appendChild(productoImg);
         productoCard.appendChild(productoInfo);
