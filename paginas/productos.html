@@ -36,7 +36,7 @@
         </div>
       </header>
       
-      <!-- <h2>Equipamiento de entrenamiento</h2> -->
+      <!-- Barra de búsqueda -->
       <div class="search-bar">
         <input type="text" placeholder="Buscar">
         
@@ -44,15 +44,15 @@
     
       <nav class="categorias">
         <ul>
-          <li><a href="#equipamiento">Equipamiento deportivo</a></li>
+          <li><a id="equipamiento" href="#producto">Equipamiento deportivo</a></li>
           <li>|</li>
-          <li><a href="#suplementos">Suplementos nutricionales</a></li>
+          <li><a id="suplementos" href="#producto">Suplementos nutricionales</a></li>
           <li>|</li>
-          <li><a href="#accesorios">Accesorios deportivos</a></li>
+          <li><a id="accesorios" href="#producto">Accesorios deportivos</a></li>
         </ul>
       </nav>
 
-      <!-- <h2 class="producto-categoria">Más vendidos</h2> -->
+      <!-- Banner de promociones -->
       <section class="producto-banner" id="producto-banner">
         
         <button class="pre-btn"><img src="../img/Productos/arrow.png" alt=""></button>
@@ -78,9 +78,9 @@
 <br> -->
       <hr>
       
+      <!-- Mostrador de productos -->
       <section class="producto" id="producto">
-        <h2 class="producto-categoria" id="equipamiento">Equipamiento deportivo</h2>
-        <!-- <p>Entrena con confianza usando nuestros mejores equipos de entrenamiento</p> -->
+        <h2 class="producto-categoria" ></h2>
 
         <div class="producto-mostrador" id="productoMostrador">
 
@@ -100,15 +100,13 @@
 
         </div>  
       </section>
-      
+
+      <!-- Carrito de compras -->
       <div class="seleccion" id="seleccion">
-        <!-- <div class="producto-seleccion">
-          <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, aperiam.</p>
-          <img src="../img/Productos/mancuerna-20kg1.jpg" id="imgSeleccionada" class="producto-miniatura" alt="">
-        </div> -->
+
         <div id="seleccionContainer" class="seleccion-container">
           
-          <div class="producto-seleccion">
+          <!-- <div class="producto-seleccion"> 
             <p id="nombreProducto">Lorem, ipsum dolor.</p>
             <div class="imagen-seleccion">
               <img src="../img/Productos/mancuerna-20kg1.jpg" id="imgSeleccionada" class="producto-miniatura" alt="">
@@ -124,16 +122,17 @@
               <img src="../img/Productos/eliminar.png" onclick="quitarCarrito(this)" alt="">
             </div>
             <p class="precio-unitario">S/50.00</p>
-          </div>
+          </div> -->
 
         </div>
         
         <div class="calculo-precio">
           <span class="subtotal">
             Subtotal
+            <!-- <p id="subtotal">90</p> -->
           </span>
           <span class="envio">
-            Envío
+            Envío: S/20.00
           </span>
         </div>
 
@@ -148,127 +147,8 @@
         <button class="boton-comprar">
           Comprar
         </button>
+
       </div>
-    
-
-      <!-- <div class="seleccion" id="seleccion">
-        <div class="cerrar" onclick="cerrar()">
-            &#x2715
-        </div>
-        <div class="info">
-            <img src="../img/Productos/1.png" alt="" id="img">
-            <h2 id="modelo">NIKE MODEL 1</h2>
-            <p id="descripcion">Descripción Modelo 1</p>
-
-            <span class="precio" id="precio">$ 130</span>
-
-            <div class="fila">
-                <div class="size">
-                    <label for="">SIZE</label>
-                    <select name="" id="">
-                        <option value="">40</option>
-                        <option value="">42</option>
-                        <option value="">44</option>
-                        <option value="">46</option>
-                    </select>
-                </div>
-                <button>AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div> -->
-
-
-      <!-- <section class="contenido">
-        <div class="mostrador" id="mostrador">
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/1.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE AIR 97</p>
-                    <span class="precio">$ 1.300</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/2.png" alt="">
-                    </div>
-                    <p class="descripcion" id>NIKE RUNNING TERRA </p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/3.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE WINFLO 8
-                    </p>
-                    <span class="precio">$ 3.600</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/4.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE LOW-TOP</p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-            </div>
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/5.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE BLAZER 97</p>
-                    <span class="precio">$ 130</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/6.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE LEGEND ESENTIAL</p>
-                    <span class="precio">$ 2.000</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/7.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE AIR ZOOM</p>
-                    <span class="precio">$ 2.500</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="../img/Productos/8.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE TERRA KING</p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-            </div> 
-        </div> -->
-        
-        <!-- <div class="seleccion" id="seleccion">
-            <div class="cerrar" onclick="cerrar()">
-                &#x2715
-            </div>
-            <div class="info">
-                <img src="../img/Productos/1.png" alt="" id="img">
-                <h2 id="modelo">NIKE MODEL 1</h2>
-                <p id="descripcion">Descripción Modelo 1</p>
-
-                <span class="precio" id="precio">$ 130</span>
-
-                <div class="fila">
-                    <div class="size">
-                        <label for="">SIZE</label>
-                        <select name="" id="">
-                            <option value="">40</option>
-                            <option value="">42</option>
-                            <option value="">44</option>
-                            <option value="">46</option>
-                        </select>
-                    </div>
-                    <button>AGREGAR AL CARRITO</button>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
       
        
