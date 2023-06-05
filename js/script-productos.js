@@ -84,9 +84,12 @@ let productosSuplementos = [
 ]
 
 let productosAccesorios = [
-    {nombre: "Rodilleras", descripcion: "Par de rodilleras adidas", precio: 35.90, img: "../img/Productos/rodilleras.jpg"},
-    {nombre: "Muñequeras", descripcion: "Par de muñequeras nike", precio: 20.90, img: "../img/Productos/muñequeras.jpg"},
-    {nombre: "Guantes", descripcion: "Par de guantes adidas", precio: 29.90, img: "../img/Productos/guantes.jpg"}
+    {nombre: "Rodilleras", descripcion: "Par de rodilleras adidas", precio: 75.90, img: "../img/Productos/rodilleras.jpg"},
+    {nombre: "Muñequeras", descripcion: "Par de muñequeras nike", precio: 30.90, img: "../img/Productos/muñequeras.jpg"},
+    {nombre: "Guantes", descripcion: "Par de guantes adidas", precio: 59.90, img: "../img/Productos/guantes.jpg"},
+    {nombre: "Banda cabeza", descripcion: "Banda de cabeza adidas", precio: 60.50, img: "../img/Productos/banda-cabeza.png"},
+    {nombre: "Tobillera", descripcion: "Par de tobilleras deportivas", precio: 20.00, img: "../img/Productos/tobillera.jpg"},
+    {nombre: "Codera", descripcion: "Par de coderas nike", precio: 35.90, img: "../img/Productos/codera.jpg"}
 ]
 
 let productos = [...productosEquipamiento, ...productosSuplementos, ...productosAccesorios];
