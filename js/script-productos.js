@@ -80,13 +80,20 @@ let productosEquipamiento = [
 
 let productosSuplementos = [
     {nombre: "Creatina", descripcion: "Creatina en polvo", precio: 60.00, img: "../img/Productos/creatina.jpg"},
-    {nombre: "Proteína", descripcion: "Proteína en polvo", precio: 65.90, img: "../img/Productos/proteina.jpg"}
+    {nombre: "Proteína", descripcion: "Proteína en polvo", precio: 65.90, img: "../img/Productos/proteina.jpg"},
+    {nombre: "Glutamina", descripcion: "Glutamina en polvo", precio: 104.90, img: "../img/Productos/glutamina.jpg"},
+    {nombre: "Omega 3", descripcion: "Capsulas", precio: 67.80, img: "../img/Productos/omega3.jpg"},
+    {nombre: "Vitamina C", descripcion: "Tabletas", precio: 54.90, img: "../img/Productos/vitaminaC.jpg"},
+    {nombre: "Oxido Nitrico", descripcion: "Solución", precio: 84.90, img: "../img/Productos/oxido_nitrico.jpg"}
 ]
 
 let productosAccesorios = [
     {nombre: "Rodilleras", descripcion: "Par de rodilleras adidas", precio: 35.90, img: "../img/Productos/rodilleras.jpg"},
     {nombre: "Muñequeras", descripcion: "Par de muñequeras nike", precio: 20.90, img: "../img/Productos/muñequeras.jpg"},
-    {nombre: "Guantes", descripcion: "Par de guantes adidas", precio: 29.90, img: "../img/Productos/guantes.jpg"}
+    {nombre: "Guantes", descripcion: "Par de guantes adidas", precio: 29.90, img: "../img/Productos/guantes.jpg"},
+    {nombre: "Correas Levantamiento", descripcion: "Par de correas", precio: 39.90, img: "../img/Productos/correas_levantamiento.jpg"},
+    {nombre: "Ejercitador de dedos", descripcion: "Ejercitador", precio: 69.90, img: "../img/Productos/ejercitador_dedos.jpg"},
+    {nombre: "Mat", descripcion: "Mat para yoga", precio: 59.90, img: "../img/Productos/mat.jpg"}
 ]
 
 let productos = [...productosEquipamiento, ...productosSuplementos, ...productosAccesorios];
