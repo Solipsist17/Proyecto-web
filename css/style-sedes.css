@@ -1,10 +1,22 @@
-.locales h2 {
+.locales_label{
     text-align: center;
     margin-top: 5rem;
     margin-bottom: 5rem;
     /* padding: 3rem; */
+    /* border-bottom: 1px solid #f1f1f1; */
+}
+.locales iframe {
+    flex: 1;
+    /* padding: 3rem;  */
 }
 
+.locales{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 3rem;  */
+}
 .card {
     margin: 55px auto;
     margin-bottom: 65px;
@@ -30,29 +42,38 @@
     padding: 20px;
 }
 
+.card div{
+    /* padding: 20px; */
+    background-color: #333;
+    /* color: #fff; */
+}
+
 .card-info h2 {
     margin: 0;
     text-align: center;
+    color: white;
 }
 
 .card-info p {
     font-weight: bold;
+    color: white;
 }
 
 .card-info ul {
     list-style-type: none;
+    color: white;
 }
 
 .card-info li::before {
-    content: "\1F4AA";
+    content: "\1F4CC";
 }
 
 .card-info a {
-    color: black;
+    color: white;
     text-decoration: none;
     transition: 0.5s;
 }
 
 .card-info a:hover {
-    color: blue;
+    color: black;
 }
