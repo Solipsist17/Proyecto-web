@@ -80,7 +80,11 @@ let productosEquipamiento = [
 
 let productosSuplementos = [
     {nombre: "Creatina", descripcion: "Creatina en polvo", precio: 60.00, img: "../img/Productos/creatina.jpg"},
-    {nombre: "Proteína", descripcion: "Proteína en polvo", precio: 65.90, img: "../img/Productos/proteina.jpg"}
+    {nombre: "Proteína", descripcion: "Proteína en polvo", precio: 65.90, img: "../img/Productos/proteina.jpg"},
+    {nombre: "Glutamina", descripcion: "Glutamina en polvo", precio: 104.90, img: "../img/Productos/glutamina.jpg"},
+    {nombre: "Omega 3", descripcion: "Capsulas", precio: 67.80, img: "../img/Productos/omega3.jpg"},
+    {nombre: "Vitamina C", descripcion: "Tabletas", precio: 54.90, img: "../img/Productos/vitaminaC.jpg"},
+    {nombre: "Oxido Nitrico", descripcion: "Solución", precio: 84.90, img: "../img/Productos/oxido_nitrico.jpg"}
 ]
 
 let productosAccesorios = [
@@ -89,7 +93,10 @@ let productosAccesorios = [
     {nombre: "Guantes", descripcion: "Par de guantes adidas", precio: 59.90, img: "../img/Productos/guantes.jpg"},
     {nombre: "Banda cabeza", descripcion: "Banda de cabeza adidas", precio: 60.50, img: "../img/Productos/banda-cabeza.png"},
     {nombre: "Tobillera", descripcion: "Par de tobilleras deportivas", precio: 20.00, img: "../img/Productos/tobillera.jpg"},
-    {nombre: "Codera", descripcion: "Par de coderas nike", precio: 35.90, img: "../img/Productos/codera.jpg"}
+    {nombre: "Codera", descripcion: "Par de coderas nike", precio: 35.90, img: "../img/Productos/codera.jpg"},
+    {nombre: "Correas Levantamiento", descripcion: "Par de correas", precio: 39.90, img: "../img/Productos/correas_levantamiento.jpg"},
+    {nombre: "Ejercitador dedos", descripcion: "Ejercitador para los dedos", precio: 29.00, img: "../img/Productos/ejercitador_dedos.jpg"},
+    {nombre: "Mat", descripcion: "Mat para yoga", precio: 30.50, img: "../img/Productos/mat.jpg"}
 ]
 
 let productos = [...productosEquipamiento, ...productosSuplementos, ...productosAccesorios];
