@@ -2,12 +2,12 @@ let imgs_inicio = new Array ( "../img/Inicio/imagen_menu11.jpg",
 "../img/Inicio/imagen_menu2.jpg", 
 "../img/Inicio/imagen_menu10.jpg"
 );
-let reemplazo =["../img/Inicio/imagen_menu11.jpg",
+let reemplazo =["../img/Inicio/imagen_menu12.jpg",
 "../img/Inicio/imagen_menu13.jpg", 
 "../img/Inicio/imagen_menu14.jpg", 
 "../img/Inicio/imagen_menu15.jpg"];
 
-let reemplazo2 =["../img/Inicio/imagen_menu16.jpg",
+let reemplazo2 =["../img/Inicio/imagen_menu4.jpg",
 "../img/Inicio/imagen_menu17.jpg", 
 "../img/Inicio/imagen_menu18.jpg", 
 "../img/Inicio/imagen_menu19.jpg"];
