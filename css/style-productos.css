@@ -265,7 +265,7 @@ hr {
 }
 
 .seleccion{
-    height: fit-content;
+    height: 100vh;
     transition: 0.5s ease;
     opacity: 0;
     width: 0%;

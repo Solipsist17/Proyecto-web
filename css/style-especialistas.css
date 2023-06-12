@@ -44,15 +44,25 @@
 
 .price__element--best{
     width: 370px;
-    padding: 60px 40px;
+    padding: 40px 30px;
     background-color: #d39247;
     --color-plan: rgba(0, 0, 0, 0.821);
     --color-price: #fff;
-    --bg-cta: #9F3919;
+    --bg-cta: #d17b61;
     --color-cta: #FFF;
     --color-items: #fff;
 }
 
+.price__element--second{
+    width: 370px;
+    padding: 40px 30px;
+    background-color: #f8e65fd6;
+    --color-plan: rgba(0, 0, 0, 0.821);
+    --color-price: #fff;
+    --bg-cta: #ceceb5;
+    --color-cta: #FFF;
+    --color-items: #fff;
+}
 
 .price__name{
     color: var(--color-plan);
@@ -87,18 +97,18 @@
     color: #1a1a1a;
 }
 
-.testimony{
+.especialista{
     background-color: #a6a9b4;
 }
 
-.testimony__container{
+.especialista__container{
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     gap: 1em;
     align-items: center;
 }
 
-.testimony__body{
+.especialista__body{
     display: grid;
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
@@ -111,13 +121,13 @@
 }
 
 
-.testimony__body--show{
+.especialista__body--show{
     pointer-events: unset;
     opacity: 1;
     transition: opacity 1.5s ease-in-out;
 }
 
-.testimony__img{
+.especialista__img{
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -125,11 +135,11 @@
     object-position: 50% 30%;
 }
 
-.testimony__texts{
+.especialista__texts{
     max-width: 700px;
 }
 
-.testimony__course{
+.especialista__course{
     background-color: #009688;
     border-radius: 10px;
     color: #ededed;
@@ -137,7 +147,7 @@
     padding: 10px;
 }
 
-.testimony__arrow{
+.especialista__arrow{
     width: 90%;
     cursor: pointer;
 }
