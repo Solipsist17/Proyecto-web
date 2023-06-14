@@ -101,19 +101,21 @@ let productosAccesorios = [
 
 let productos = [...productosEquipamiento, ...productosSuplementos, ...productosAccesorios];
 
-let mostrador = document.getElementById("producto");
+/*let mostrador = document.getElementById("producto");
 
+// Limpiamos el contenido del mostrador
 let categorias = [...document.querySelectorAll(".categorias a")];
-
-for (let i = 0; i < categorias.length; i++) { // Asignamos los eventos a los link de categorías
+ for (let i = 0; i < categorias.length; i++) { // Asignamos los eventos a los link de categorías
     categorias[i].addEventListener("click", () => {
-        seleccionarCategoria(categorias[i].id);
+        console.log("Se limpió el mostrador");
+        let productoMostrador = document.getElementById("productoMostrador");
+        productoMostrador.innerHTML = ""; // Limpiamos el mostrador
+        //seleccionarCategoria(categorias[i].id);
     })
-}
+} 
+//////
 
 function seleccionarCategoria(categoria) {
-
-
     switch (categoria) {
         case "equipamiento": 
             cargarMostrador(productosEquipamiento, categoria);
@@ -129,15 +131,15 @@ function seleccionarCategoria(categoria) {
     }
 }
 
-//cargarMostrador(productos); /* Cargar el mostrador de acuerdo a la categoría seleccionada */
-function cambiarNumFilasMostrador(productoMostrador, cantidadProductos) {
+// Cargar el mostrador de acuerdo a la categoría seleccionada 
+ function cambiarNumFilasMostrador(productoMostrador, cantidadProductos) {
     let numFilas = (cantidadProductos/3);
     let filas = Math.ceil(numFilas); // Redondeo al superior
     productoMostrador.style.gridTemplateRows = `repeat(${filas}, 1fr)`;
     console.log(`Número de filas del mostrador: ` + filas);
-}
+} 
 
-cargarMostrador(productos, "Todos"); // Cargamos todos los productos
+//cargarMostrador(productos, "Todos"); // Cargamos todos los productos
 
 function cargarMostrador(productos, categoria) { 
     let productoMostrador = document.getElementById("productoMostrador");
@@ -147,7 +149,7 @@ function cargarMostrador(productos, categoria) {
     categoriaTitulo.id = categoria;
     categoriaTitulo.textContent = categoria;
     
-    /* productoMostrador.style.gridTemplateRows = "repeat(5, 1fr)"; */
+    //productoMostrador.style.gridTemplateRows = "repeat(5, 1fr)";
     cambiarNumFilasMostrador(productoMostrador, productos.length); 
         
     for (let i = 0; i < productos.length; i++) {
@@ -158,9 +160,6 @@ function cargarMostrador(productos, categoria) {
         let productoImg = document.createElement("div");
         productoImg.className = "producto-img";
 
-        /* let descuentoTag = document.createElement("span");
-        descuentoTag.className = "descuento-tag";
-        descuentoTag.textContent = "50% off"; */
         let img = document.createElement("img");
         img.className = "producto-miniatura";
         img.src = productos[i].img;
@@ -183,24 +182,19 @@ function cargarMostrador(productos, categoria) {
         let precio = document.createElement("span");
         precio.className = "precio";
         precio.textContent = "S/" + productos[i].precio.toFixed(2);
-        /* let precioActual = document.createElement("span");
-        precioActual.className = "precio-actual";
-        precioActual.textContent = "S/300.00"; */
 
-        /* productoImg.appendChild(descuentoTag); */
         productoImg.appendChild(img);
         productoImg.appendChild(btnAgregar);
         productoInfo.appendChild(productoNombre);
         productoInfo.appendChild(productoDescripcion);
         productoInfo.appendChild(precio);
-        /* productoInfo.appendChild(precioActual); */
 
         productoCard.appendChild(productoImg);
         productoCard.appendChild(productoInfo);
         
         productoMostrador.appendChild(productoCard);
     }
-}
+} */
 
         
 /* Carrito de compras */

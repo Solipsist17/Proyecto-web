@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Especialistas</title>
+    <title>Productos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
@@ -47,11 +47,13 @@
     
       <nav class="categorias">
         <ul>
-          <li><a id="equipamiento" href="#producto">Equipamiento deportivo</a></li>
+          <li><a id="todos" href="productos.php?categoria=todos#producto">Todos</a></li>
           <li>|</li>
-          <li><a id="suplementos" href="#producto">Suplementos nutricionales</a></li>
+          <li><a id="equipamiento" href="productos.php?categoria=equipamiento#producto">Equipamiento deportivo</a></li>
           <li>|</li>
-          <li><a id="accesorios" href="#producto">Accesorios deportivos</a></li>
+          <li><a id="suplementos" href="productos.php?categoria=suplementos#producto">Suplementos nutricionales</a></li>
+          <li>|</li>
+          <li><a id="accesorios" href="productos.php?categoria=accesorios#producto">Accesorios deportivos</a></li>
         </ul>
       </nav>
 
@@ -82,12 +84,14 @@
       <hr>
       
       <!-- Mostrador de productos -->
-      <section class="producto" id="producto">
+      <?php include("../php/php-productos-mostrador.php") ?>
+
+      <!-- <section class="producto" id="producto">
         <h2 class="producto-categoria" ></h2>
 
         <div class="producto-mostrador" id="productoMostrador">
 
-          <!-- <div class="producto-card">
+          <div class="producto-card">
             <div class="producto-img">
               <span class="descuento-tag">50% off</span>
               <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
@@ -99,10 +103,11 @@
               <span class="precio">S/120</span>
               <span class="precio-actual">S/120</span>
             </div>
-          </div> -->
+          </div>
 
         </div>  
-      </section>
+      </section> -->
+
 
       <!-- Carrito de compras -->
       <div class="seleccion" id="seleccion">
