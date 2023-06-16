@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+<?php
+?>
 <html>
   <head>  
     <meta charset="”UTF-8”" />
@@ -21,10 +24,10 @@
             <!-- <h1>GYM HERCULIANO</h1> -->
             <nav>
                 <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="paginas/servicios.html">Servicios</a></li>
-                  <li><a href="paginas/productos.html">Productos</a></li>
-                  <li><a href="paginas/sedes.html">Locales</a></li>
+                  <li><a href="index.php">Inicio</a></li>
+                  <li><a href="paginas/servicios.php">Servicios</a></li>
+                  <li><a href="paginas/productos.php">Productos</a></li>
+                  <li><a href="paginas/sedes.php">Locales</a></li>
                   <li>|</li>
                   <li><a href="paginas/formulario.html">Login</a></li>
                 </ul>
@@ -163,4 +166,5 @@
     </footer>
     
   </body>
+  
 </html>

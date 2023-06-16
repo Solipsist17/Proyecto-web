@@ -37,12 +37,12 @@
         />
         <nav>
           <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="sedes.html">Locales</a></li>
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="servicios.php">Servicios</a></li>
+            <li><a href="productos.php">Productos</a></li>
+            <li><a href="sedes.php">Locales</a></li>
             <li>|</li>
-            <li><a href="formulario.html">Login</a></li>
+            <li><a href="formulario.php">Login</a></li>
           </ul>
         </nav>
       </div>
