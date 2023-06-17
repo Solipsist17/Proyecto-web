@@ -1,6 +1,6 @@
 
 /* Banner de anuncios */
-let productosBanner = ["../img/Productos/banner1.png", "../img/Productos/banner2.png", "../img/Productos/banner3.png"];
+/* let productosBanner = ["../img/Productos/banner1.png", "../img/Productos/banner2.png", "../img/Productos/banner3.png"];
  
 let container = document.querySelector(".producto-container");
 
@@ -20,7 +20,7 @@ for (let i=0; i<productosBanner.length; i++){
     cardDiv.appendChild(imgDiv);
     container.appendChild(cardDiv);
 }  
-
+ */
 /* Slider en banner de anuncios  */
 const productoContainers = [...document.querySelectorAll(".producto-container")];
 

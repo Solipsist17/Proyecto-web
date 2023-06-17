@@ -58,22 +58,24 @@
       </nav>
 
       <!-- Banner de promociones -->
+      
       <section class="producto-banner" id="producto-banner">
         
         <button class="pre-btn"><img src="../img/Productos/arrow.png" alt=""></button>
+        <?php  include "../php/php-productos-banner.php" ?>
         <button class="nxt-btn"><img src="../img/Productos/arrow.png" alt=""></button>
         
         
-        <div class="producto-container">
-
-          <!-- <div class="producto-card">
+</div>
+        <!-- <div class="producto-container">
+           <div class="producto-card">
             <div class="producto-img">
               <span class="descuento-tag">50% off</span>
               <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
               <button class="card-btn">Agregar al carrito</button>
             </div>
-          </div> -->
-        </div>
+          </div> 
+        </div> -->
 
       </section>
 <!-- <br>
