@@ -11,5 +11,5 @@ $especialistas = [
 
 <?php 
 for($i=0; $i < count($especialistas); $i++) { ?>
-    <h1>Hola</h1>
+    <!-- <h1>Hola</h1> -->
 <?php } ?>   
