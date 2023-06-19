@@ -29,7 +29,7 @@
                   <li><a href="paginas/productos.php">Productos</a></li>
                   <li><a href="paginas/sedes.php">Locales</a></li>
                   <li>|</li>
-                  <li><a href="paginas/formulario.html">Login</a></li>
+                  <li><a href="paginas/formulario.php">Login</a></li>
                 </ul>
             </nav>
         </div> 
