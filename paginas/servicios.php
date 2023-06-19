@@ -51,7 +51,7 @@
       <section class="price container">
         <h2 class="subtitle">OBTEN EL PLAN PERFECTO</h2>
 
-        <div class="price__table">
+        <!-- <div class="price__table">
           <div class="price__element">
             <p class="price__name">BASIC</p>
             <h3 class="price__price">$15/MES</h3>
@@ -99,13 +99,104 @@
 
             <a href="#" class="price__cta">Empieza ahora</a>
           </div>
-        </div>
+        </div> -->
+        <div class="price__table">
+      <?php
+      /* $planes = [
+        [
+          'name' => 'BASIC',
+          'price' => '$15/MES',
+          'features' => [
+            'Accede a todas las áreas del gimnasio',
+            'Herculiano GO',
+            'Vestidores'
+          ]
+        ],
+        [
+          'name' => 'SMART',
+          'price' => '$30/mes',
+          'features' => [
+            'Accede a todas las áreas del gimnasio',
+            'Herculiano GO',
+            'Vestidores',
+            'Relájate en los sillones de masajes'
+          ]
+        ],
+        [
+          'name' => 'VIP PRO',
+          'price' => '$40/mes',
+          'features' => [
+            'Animation',
+            'Herculiano GO',
+            'Relájate en los sillones de masajes',
+            'Entrena en todas nuestras sedes de Perú',
+            'Vestidores, Lockers'
+          ]
+        ]
+      ];
+
+      foreach ($planes as $plan) {
+        echo '<div class="price__element">';
+        echo '<p class="price__name">' . $plan['name'] . '</p>';
+        echo '<h3 class="price__price">' . $plan['price'] . '</h3>';
+        echo '<div class="price__items">';
+        foreach ($plan['features'] as $feature) {
+          echo '<p class="price__features">' . $feature . '</p>';
+        }
+        echo '</div>';
+        echo '<a href="#" class="price__cta">Empieza ahora</a>';
+        echo '</div>';
+      } */ include("../php/php-servicios-membresia.php")
+      ?>
+    </div>
       </section>
-      
-      <?php include("../php/php-servicios.php"); ?>
-
-
       <section class="especialista">
+    <div class="especialista__container container">
+      <img src="../img/Especialistas/leftarroy.svg" class="especialista__arrow" id="before" />
+
+      <?php
+      /* $especialistas = [
+        [
+          'name' => 'Jordan Alexander',
+          'course' => 'Asesor Nutricional Deportivo',
+          'review' => 'Asesor destacado por su gran actitud y estilo de vida alimentacio. Grado superior de FP en nutrición y dietética, cuenta con una experiencia de más de 10 años.',
+          'image' => '../img/Especialistas/nutricion.jpg'
+        ],
+        [
+          'name' => 'Juan Cuadro',
+          'course' => 'Maestro en Fitness',
+          'review' => 'Maestro destacada por su exigencia, comprometido y disciplina que busca la mejora fisica de sus alumnos. Grado en Ciencias de la Actividad Física y del Deporte. Experiencia de más de 8 años.',
+          'image' => '../img/Especialistas/Ejercicio.jpg'
+        ],
+        [
+          'name' => 'Karen Arteaga',
+          'course' => 'Asesora en Yoga',
+          'review' => 'Una gran persona destacada por su amabilidad y disciplina. Comprometida en la mejora fisica y mental de sus alumnos con formación en SUP Yoga y con una experiencia de más de 7 años.',
+          'image' => '../img/Especialistas/yoga.jpg'
+        ]
+      ];
+
+      foreach ($especialistas as $key => $especialista) {
+        echo '<section class="especialista__body ' . (($key === 0) ? 'especialista__body--show' : '') . '" data-id="' . ($key + 1) . '">';
+        echo '<div class="especialista__texts">';
+        echo '<h2 class="subtitle">Mi nombre es ' . $especialista['name'] . ', <span class="especialista__course">' . $especialista['course'] . '</span></h2>';
+        echo '<p class="especialista__review">' . $especialista['review'] . '</p>';
+        echo '</div>';
+        echo '<figure class="especialista__picture">';
+        echo '<img src="' . $especialista['image'] . '" class="especialista__img" />';
+        echo '</figure>';
+        echo '</section>';
+      } */
+      include("../php/php-servicios-especialistas.php")
+      ?>
+
+      <img src="../img/Especialistas/rightarrow.svg" class="especialista__arrow" id="next" />
+    </div>
+  </section>
+      
+
+
+      <!-- <section class="especialista">
         <div class="especialista__container container">
           <img
             src="../img/Especialistas/leftarroy.svg"
@@ -187,7 +278,7 @@
             id="next"
           />
         </div>
-      </section>
+      </section> -->
     </main>
     <script src="../js/script-servicios.js"></script>
     
