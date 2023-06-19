@@ -58,8 +58,7 @@
       </div>
 
       <section class="locales">
-        <!-- Tarjetas de locales -->
-        <div class="card">
+        <!-- <div class="card">
           <iframe
             class="mapa"
             id="mapa1"
@@ -274,13 +273,14 @@
               <li>901789434</li>
             </ul>
           </div>
-        </div>
-
-        <!-- TABLAS -->
+        </div> -->
+        <?php include("../php/php-sedes.php")  ?>
       </section>
+      
+      <script src="../js/script-sedes.js"></script>
       <br /><br />
 
-      <script src="../js/script-sedes.js"></script>
+
     </main>
     <footer>
       <div class="logo_footer">

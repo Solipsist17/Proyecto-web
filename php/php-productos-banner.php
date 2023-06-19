@@ -14,10 +14,10 @@ $productosBanner = ["../img/Productos/banner1.png", "../img/Productos/banner2.pn
 echo $container; */
 ?>
 <div class="producto-container">
-        <?php foreach ($productosBanner as $imagen): ?>
-        <div class="producto-card" style="width: 100%; height: 100%;">
+     <?php foreach ($productosBanner as $imagen): ?>
+     <div class="producto-card" style="width: 100%; height: 100%;">
         <div class="producto-img" style="height: 100%;">
-        <img style="width: 100%; height: 100%;" src="<?php echo $imagen; ?>">
+           <img style="width: 100%; height: 100%;" src="<?php echo $imagen; ?>">
        </div>
-       </div>
-        <?php endforeach; ?>
+</div>
+<?php endforeach; ?>
