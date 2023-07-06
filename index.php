@@ -29,7 +29,8 @@
                   <li><a href="paginas/productos.php">Productos</a></li>
                   <li><a href="paginas/sedes.php">Locales</a></li>
                   <li>|</li>
-                  <li><a href="paginas/formulario.php">Login</a></li>
+                  <li><?php $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+                <a href="paginas/<?= $pagina?>.php"><?= $pagina?></a></li>
                 </ul>
             </nav>
         </div> 

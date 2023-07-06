@@ -42,7 +42,9 @@
             <li><a href="productos.php">Productos</a></li>
             <li><a href="sedes.php">Locales</a></li>
             <li>|</li>
-            <li><a href="formulario.php">Login</a></li>
+            <li><?php session_start();
+             $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+                <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
           </ul>
         </nav>
       </div>

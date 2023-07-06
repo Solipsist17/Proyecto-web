@@ -1,6 +1,5 @@
+<?php include_once '../php/php-registro-login.php' ?>
 <!DOCTYPE html>
-<?php
-?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -48,12 +47,20 @@
             <li><a href="productos.php">Productos</a></li>
             <li><a href="sedes.php">Locales</a></li>
             <li>|</li>
-            <li><a href="formulario.php">Login</a></li>
+            <!-- Modificar el nombre de formulario.php para que sea dinámico -->
+            <li><?php $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+                <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
+      <div class="message">
+        <?php if (isset($mensaje)) { ?>
+        <p><?php echo $mensaje; ?></p>
+        <?php } ?>
+      </div>
+      
       <div class="container-form sign-up">
         <div class="welcome-back">
           <div class="message">
@@ -62,7 +69,7 @@
             <button class="sign-up-btn">Iniciar Sesion</button>
           </div>
         </div>
-        <form class="formulario">
+        <form class="formulario" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
           <h2 class="create-account">Crear una cuenta</h2>
           <div class="iconos">
             <div class="border-icon">
@@ -76,14 +83,15 @@
             </div>
           </div>
           <p class="cuenta-gratis">Crear una cuenta gratis</p>
-          <input type="text" placeholder="Nombre" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Contraseña" />
-          <input type="button" value="Registrarse" />
+          <input type="text" name="nombre" placeholder="Nombre" required />
+          <input type="text" name="apellido" placeholder="Apellido" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="clave" placeholder="Contraseña" required />
+          <input type="submit" name="registrarse" value="Registrarse" />
         </form>
       </div>
       <div class="container-form sign-in">
-        <form class="formulario">
+        <form class="formulario" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
           <h2 class="create-account">Iniciar Sesion</h2>
           <div class="iconos">
             <div class="border-icon">
@@ -97,9 +105,9 @@
             </div>
           </div>
           <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Contraseña" />
-          <input type="button" value="Iniciar Sesion" />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="password" name="clave" placeholder="Contraseña" required />
+          <input type="submit" name="login" value="Iniciar Sesion" />
         </form>
         <div class="welcome-back">
           <div class="message">
