@@ -37,7 +37,9 @@
         $usuario = cargarCuenta();
     }
 
+    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,17 +85,17 @@
     <div class="login-box">
       <h3>Información de la cuenta</h3>
     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" value="<?= $usuario['nombre']; ?>" type="text" required>
-        <label for="apellido">Apellido</label>
-        <input id="apellido" name="apellido" value="<?= $usuario['apellido']; ?>" type="text" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" value="<?= $usuario['email']; ?>" type="email" required>
-        <!-- <label for="password">Password</label>
-        <input id="password" name="password" value="<?= $usuario['clave']; ?>" type="password" required> -->
+        <label for="nombre" class="label-n" >Nombre</label>
+        <input id="nombre" class="input-n" name="nombre" value="<?= $usuario['nombre']; ?>" type="text" required>
+        <label for="apellido" class="label-n">Apellido</label>
+        <input id="apellido" class="input-n" name="apellido" value="<?= $usuario['apellido']; ?>" type="text" required>
+        <label for="email" class="label-n">Email</label>
+        <input id="email" class="input-n" name="email" value="<?= $usuario['email']; ?>" type="email" required>
+        <!-- <label for="password">Password</label> -->
+        <!-- <input id="password" name="password" value="<?= $usuario['clave']; ?>" type="password" required> -->
         
-        <button  type="submit" value="Guardar" name="guardar" ><span>Guardar</span></button>
-          <!-- <input type="submit" value="Guardar" name="guardar"> -->
+        <!-- <button  type="submit" value="Guardar" name="guardar" ><span>Guardar</span></button> -->
+        <input type="submit" class="input-b" value="Guardar" name="guardar">
       
         
     </form>
@@ -101,7 +103,7 @@
     <!-- <input type="button" value="Cambiar contraseña"> -->
     <a href="?logout=true" class="">Cerrar sesión</a>
     </div>
-    <button  type="submit" value="Guardar" name="guardar" class="guardar-button" ><span>Guardar</span></button>
+    
 
 </body>
 </html>

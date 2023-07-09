@@ -8,75 +8,86 @@
 .titulo{
     text-align: center;
 }
+
 .login-box{
     display: flex;
     flex-direction: column;
     position: relative;
-    /* top: 50%;*/
-    /* left: 50%;  */
+
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     height: 60%;
     padding: 40px;
-    /* transform: translate(42px, 18px); */
+
     background: #41414100;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 10px;
-    align-items: center;/*ufff ayuda un monton*/
+    align-items: center;
 }
 .login-box h3{
     margin: 0 0 30px;
     padding: 0;
     color: #ffffff;
 }
-.login-box label{
-    display: block;
-}
-.login-box input{
-    margin: 1em;
-    display: block;
-    outline: none;
-    background: transparent;
-    color: #ffffff;
-    border: none;
-    border-bottom: 1px solid #fff;
-}
+
 .login-box a{
     text-decoration: none;
     color: #ffffff;
+} 
+.label-n{
+    display: block;
 }
-.login-box button{
+.input-n{
+    margin: 1em;
+    display: block;
     height: 50px;
     width: 135px;
+    outline: none;
+    background: #333;
+    color: #ffffff;
+    border: none;
+    border-bottom: 4px solid #1a1a1a;
 }
-/*REVISAR ESTO XQ NO ME SALEEE*/
-/* .login-box button ::after{
-    content: "";
-	width: 100%;
-	height: 100%;
-	background: #c4b107;
-	position: absolute;
-	z-index: 1;
-	top: -80px;
-	left: 0;
-	transition: .3s ease-in-out all;
-}
-.login-box button:hover ::after{
-    top: 0;
-}
-.guardar-button ::after{
-    content: "";
-	width: 100%;
-	height: 100%;
-	background: #c4b107;
-	position: absolute;
-	z-index: 1;
-	top: -80px;
-	left: 0;
-	transition: .3s ease-in-out all;
-}
-.guardar-button:hover ::after{
-    top: 0;
+/* .input-b{
+    height: 50px;
+    width: 135px;
 } */
+.input-b{
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+    /* animation: spin 2s infinite linear; */
+}
+/* @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
+.input-b:hover{
+    background-color: #1a1a1a; 
+    color: white;
+    transform: scale(1.4);
+}
+
+.input-b :active{
+    opacity: 0.2;
+}
+/* .input-b ::after{
+    content: "";
+	width: 100%;
+	height: 100%;
+	background: #c4b107;
+	position: absolute;
+	z-index: 1;
+	top: -80px;
+	left: 0;
+	transition: .3s ease-in-out all;  
+} */
+.input-b:hover ::after{
+    top: 0;
+}
