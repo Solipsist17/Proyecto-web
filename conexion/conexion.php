@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gimnasio";
-$port = "3308"; //Cambiar acá el puerto
+$port = "33081"; //Cambiar acá el puerto
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 // Verificar la conexión

@@ -1,0 +1,82 @@
+/* body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30,
+    #243b55);
+}  */
+.titulo{
+    text-align: center;
+}
+.login-box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* top: 50%;*/
+    /* left: 50%;  */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 60%;
+    padding: 40px;
+    /* transform: translate(42px, 18px); */
+    background: #41414100;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    align-items: center;/*ufff ayuda un monton*/
+}
+.login-box h3{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #ffffff;
+}
+.login-box label{
+    display: block;
+}
+.login-box input{
+    margin: 1em;
+    display: block;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+.login-box a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.login-box button{
+    height: 50px;
+    width: 135px;
+}
+/*REVISAR ESTO XQ NO ME SALEEE*/
+/* .login-box button ::after{
+    content: "";
+	width: 100%;
+	height: 100%;
+	background: #c4b107;
+	position: absolute;
+	z-index: 1;
+	top: -80px;
+	left: 0;
+	transition: .3s ease-in-out all;
+}
+.login-box button:hover ::after{
+    top: 0;
+}
+.guardar-button ::after{
+    content: "";
+	width: 100%;
+	height: 100%;
+	background: #c4b107;
+	position: absolute;
+	z-index: 1;
+	top: -80px;
+	left: 0;
+	transition: .3s ease-in-out all;
+}
+.guardar-button:hover ::after{
+    top: 0;
+} */

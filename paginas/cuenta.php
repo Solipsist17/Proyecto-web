@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="../css/Fuente_css.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-cuenta.css">
+    <link rel="stylesheet" href="../css/style-cuenta.css">
 
     <link rel="shortcut icon" href="../img/Inicio/newLogoInvert-ico3.ico" type="image/x-icon">
 </head>
@@ -78,8 +79,9 @@
           </nav>
         </div>
     </header>
-    <h1>Mi cuenta</h1>
-    <p>Información de la cuenta</p>
+    <h1 class="titulo">Mi cuenta</h1>
+    <div class="login-box">
+      <h3>Información de la cuenta</h3>
     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
         <label for="nombre">Nombre</label>
         <input id="nombre" name="nombre" value="<?= $usuario['nombre']; ?>" type="text" required>
@@ -89,10 +91,17 @@
         <input id="email" name="email" value="<?= $usuario['email']; ?>" type="email" required>
         <!-- <label for="password">Password</label>
         <input id="password" name="password" value="<?= $usuario['clave']; ?>" type="password" required> -->
-        <input type="submit" value="Guardar" name="guardar">
+        
+        <button  type="submit" value="Guardar" name="guardar" ><span>Guardar</span></button>
+          <!-- <input type="submit" value="Guardar" name="guardar"> -->
+      
+        
     </form>
+    <br>
     <!-- <input type="button" value="Cambiar contraseña"> -->
     <a href="?logout=true" class="">Cerrar sesión</a>
+    </div>
+    <button  type="submit" value="Guardar" name="guardar" class="guardar-button" ><span>Guardar</span></button>
 
 </body>
 </html>
