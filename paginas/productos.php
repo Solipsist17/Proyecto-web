@@ -1,3 +1,42 @@
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['idUsuario'])) {
+      header("Location: login.php");
+      exit;
+    }
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+        exit;
+    }
+
+    require_once('../conexion/conexion.php');
+
+    function cargarCuenta() {
+        global $conn;
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
+        $result = $conn->query($sql);
+        $usuario = $result->fetch_assoc();
+        return $usuario;
+    }
+    $usuario = cargarCuenta();
+    
+    //var_dump($usuario);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["guardar"])) {
+        global $conn;
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "UPDATE usuario SET nombre='$nombre', apellido='$apellido', email='$email' WHERE idUsuario='$idUsuario'";
+        $conn->query($sql);
+        $usuario = cargarCuenta();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,8 +72,8 @@
               <li><a href="productos.php">Productos</a></li>
               <li><a href="sedes.php">Locales</a></li>
               <li>|</li>
-              <li><?php session_start();
-               $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+              <li><?php 
+               $pagina = isset($_SESSION['idUsuario']) ? $usuario['nombre'] : "Login" ?>
                 <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
             </ul>
           </nav>
@@ -69,73 +108,16 @@
         
         
 </div>
-        <!-- <div class="producto-container">
-           <div class="producto-card">
-            <div class="producto-img">
-              <span class="descuento-tag">50% off</span>
-              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
-              <button class="card-btn">Agregar al carrito</button>
-            </div>
-          </div> 
-        </div> -->
-
       </section>
-<!-- <br>
-<br>
-<br>
-<br>
-<br> -->
+
       <hr>
       
       <!-- Mostrador de productos -->
       <?php include("../php/php-productos-mostrador.php") ?>
-
-      <!-- <section class="producto" id="producto">
-        <h2 class="producto-categoria" ></h2>
-
-        <div class="producto-mostrador" id="productoMostrador">
-
-          <div class="producto-card">
-            <div class="producto-img">
-              <span class="descuento-tag">50% off</span>
-              <img src="../img/Productos/mancuerna-20kg1.jpg" class="producto-miniatura" alt="">
-              <button class="card-btn" onclick="cargar(this)">Agregar al carrito</button>
-            </div>
-            <div class="producto-info">
-              <h2 class="producto-marca">Mancuernas</h2>
-              <p class="producto-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, tempore qui repellendus recusandae tenetur eaque!</p>
-              <span class="precio">S/120</span>
-              <span class="precio-actual">S/120</span>
-            </div>
-          </div>
-
-        </div>  
-      </section> -->
-
-
       <!-- Carrito de compras -->
       <div class="seleccion" id="seleccion">
 
         <div id="seleccionContainer" class="seleccion-container">
-          
-          <!-- <div class="producto-seleccion"> 
-            <p id="nombreProducto">Lorem, ipsum dolor.</p>
-            <div class="imagen-seleccion">
-              <img src="../img/Productos/mancuerna-20kg1.jpg" id="imgSeleccionada" class="producto-miniatura" alt="">
-            </div>
-            <select class="select-unidades">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-            <div class="producto-eliminar">
-              <img src="../img/Productos/eliminar.png" onclick="quitarCarrito(this)" alt="">
-            </div>
-            <p class="precio-unitario">S/50.00</p>
-          </div> -->
-
         </div>
         
         <div class="calculo-precio">

@@ -1,3 +1,42 @@
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['idUsuario'])) {
+      header("Location: login.php");
+      exit;
+    }
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+        exit;
+    }
+
+    require_once('../conexion/conexion.php');
+
+    function cargarCuenta() {
+        global $conn;
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
+        $result = $conn->query($sql);
+        $usuario = $result->fetch_assoc();
+        return $usuario;
+    }
+    $usuario = cargarCuenta();
+    
+    //var_dump($usuario);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["guardar"])) {
+        global $conn;
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "UPDATE usuario SET nombre='$nombre', apellido='$apellido', email='$email' WHERE idUsuario='$idUsuario'";
+        $conn->query($sql);
+        $usuario = cargarCuenta();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,8 +81,8 @@
             <li><a href="productos.php">Productos</a></li>
             <li><a href="sedes.php">Locales</a></li>
             <li>|</li>
-            <li><?php session_start();
-             $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+            <li><?php 
+             $pagina = isset($_SESSION['idUsuario']) ? $usuario['nombre'] : "Login" ?>
                 <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
           </ul>
         </nav>
@@ -52,103 +91,9 @@
     <main>
       <section class="price container">
         <h2 class="subtitle">OBTEN EL PLAN PERFECTO</h2>
-
-        <!-- <div class="price__table">
-          <div class="price__element">
-            <p class="price__name">BASIC</p>
-            <h3 class="price__price">$15/MES</h3>
-
-            <div class="price__items">
-              <p class="price__features">
-                Accede a todas las áreas del gimnasio
-              </p>
-              <p class="price__features">Herculiano GO</p>
-              <p class="price__features">Vestidores</p>
-            </div>
-
-            <a href="#" class="price__cta">Empieza ahora</a>
-          </div>
-
-          <div class="price__element price__element--best">
-            <p class="price__name">SMART</p>
-            <h3 class="price__price">$30/mes</h3>
-
-            <div class="price__items">
-              <p class="price__features">
-                Accede a todas las áreas del gimnasio
-              </p>
-              <p class="price__features">Herculiano GO</p>
-              <p class="price__features">Vestidores</p>
-              <p class="price__features">Relájate en los sillones de masajes</p>
-            </div>
-
-            <a href="#" class="price__cta">Empieza ahora</a>
-          </div>
-
-          <div class="price__element price__element--second">
-            <p class="price__name">VIP PRO</p>
-            <h3 class="price__price">$40/mes</h3>
-
-            <div class="price__items">
-              <p class="price__features">Animation</p>
-              <p class="price__features">Herculiano GO</p>
-              <p class="price__features">Relájate en los sillones de masajes</p>
-              <p class="price__features">
-                Entrena en todas nuestras sedes de Perú
-              </p>
-              <p class="price__features">Vestidores, Lockers</p>
-            </div>
-
-            <a href="#" class="price__cta">Empieza ahora</a>
-          </div>
-        </div> -->
         <div class="price__table">
       <?php
-      /* $planes = [
-        [
-          'name' => 'BASIC',
-          'price' => '$15/MES',
-          'features' => [
-            'Accede a todas las áreas del gimnasio',
-            'Herculiano GO',
-            'Vestidores'
-          ]
-        ],
-        [
-          'name' => 'SMART',
-          'price' => '$30/mes',
-          'features' => [
-            'Accede a todas las áreas del gimnasio',
-            'Herculiano GO',
-            'Vestidores',
-            'Relájate en los sillones de masajes'
-          ]
-        ],
-        [
-          'name' => 'VIP PRO',
-          'price' => '$40/mes',
-          'features' => [
-            'Animation',
-            'Herculiano GO',
-            'Relájate en los sillones de masajes',
-            'Entrena en todas nuestras sedes de Perú',
-            'Vestidores, Lockers'
-          ]
-        ]
-      ];
-
-      foreach ($planes as $plan) {
-        echo '<div class="price__element">';
-        echo '<p class="price__name">' . $plan['name'] . '</p>';
-        echo '<h3 class="price__price">' . $plan['price'] . '</h3>';
-        echo '<div class="price__items">';
-        foreach ($plan['features'] as $feature) {
-          echo '<p class="price__features">' . $feature . '</p>';
-        }
-        echo '</div>';
-        echo '<a href="#" class="price__cta">Empieza ahora</a>';
-        echo '</div>';
-      } */ include("../php/php-servicios-membresia.php")
+     include("../php/php-servicios-membresia.php")
       ?>
     </div>
       </section>
@@ -157,38 +102,7 @@
       <img src="../img/Especialistas/leftarroy.svg" class="especialista__arrow" id="before" />
 
       <?php
-      /* $especialistas = [
-        [
-          'name' => 'Jordan Alexander',
-          'course' => 'Asesor Nutricional Deportivo',
-          'review' => 'Asesor destacado por su gran actitud y estilo de vida alimentacio. Grado superior de FP en nutrición y dietética, cuenta con una experiencia de más de 10 años.',
-          'image' => '../img/Especialistas/nutricion.jpg'
-        ],
-        [
-          'name' => 'Juan Cuadro',
-          'course' => 'Maestro en Fitness',
-          'review' => 'Maestro destacada por su exigencia, comprometido y disciplina que busca la mejora fisica de sus alumnos. Grado en Ciencias de la Actividad Física y del Deporte. Experiencia de más de 8 años.',
-          'image' => '../img/Especialistas/Ejercicio.jpg'
-        ],
-        [
-          'name' => 'Karen Arteaga',
-          'course' => 'Asesora en Yoga',
-          'review' => 'Una gran persona destacada por su amabilidad y disciplina. Comprometida en la mejora fisica y mental de sus alumnos con formación en SUP Yoga y con una experiencia de más de 7 años.',
-          'image' => '../img/Especialistas/yoga.jpg'
-        ]
-      ];
-
-      foreach ($especialistas as $key => $especialista) {
-        echo '<section class="especialista__body ' . (($key === 0) ? 'especialista__body--show' : '') . '" data-id="' . ($key + 1) . '">';
-        echo '<div class="especialista__texts">';
-        echo '<h2 class="subtitle">Mi nombre es ' . $especialista['name'] . ', <span class="especialista__course">' . $especialista['course'] . '</span></h2>';
-        echo '<p class="especialista__review">' . $especialista['review'] . '</p>';
-        echo '</div>';
-        echo '<figure class="especialista__picture">';
-        echo '<img src="' . $especialista['image'] . '" class="especialista__img" />';
-        echo '</figure>';
-        echo '</section>';
-      } */
+      
       include("../php/php-servicios-especialistas.php")
       ?>
 
@@ -198,89 +112,7 @@
       
 
 
-      <!-- <section class="especialista">
-        <div class="especialista__container container">
-          <img
-            src="../img/Especialistas/leftarroy.svg"
-            class="especialista__arrow"
-            id="before"
-          />
-
-          <section
-            class="especialista__body especialista__body--show"
-            data-id="1"
-          >
-            <div class="especialista__texts">
-              <h2 class="subtitle">
-                Mi nombre es Jordan Alexander,
-                <span class="especialista__course"
-                  >Asesor Nutricional Deportivo</span
-                >
-              </h2>
-              <p class="especialista__review">
-                Asesor destacado por su gran actitud y estilo de vida
-                alimentacio. Grado superior de FP en nutrición y dietética,
-                cuenta con una experiencia de más de 10 años.
-              </p>
-            </div>
-
-            <figure class="especialista__picture">
-              <img
-                src="../img/Especialistas/nutricion.jpg"
-                class="especialista__img"
-              />
-            </figure>
-          </section>
-
-          <section class="especialista__body" data-id="2">
-            <div class="especialista__texts">
-              <h2 class="subtitle">
-                Mi nombre es Juan Cuadro,
-                <span class="especialista__course">Maestro en Fitness</span>
-              </h2>
-              <p class="especialista__review">
-                Maestro destacada por su exigencia, comprometido y disciplina
-                que busca la mejora fisica de sus alumnos. Grado en Ciencias de
-                la Actividad Física y del Deporte. Experiencia de más de 8 años.
-              </p>
-            </div>
-
-            <figure class="especialista__picture">
-              <img
-                src="../img/Especialistas/Ejercicio.jpg"
-                class="especialista__img"
-              />
-            </figure>
-          </section>
-
-          <section class="especialista__body" data-id="3">
-            <div class="especialista__texts">
-              <h2 class="subtitle">
-                Mi nombre es Karen Arteaga,
-                <span class="especialista__course">Asesora en Yoga</span>
-              </h2>
-              <p class="especialista__review">
-                Una gran persona destacada por su amabilidad y disciplina.
-                Comprometida en la mejora fisica y mental de sus alumnos con
-                formación en SUP Yoga y con una experiencia de más de 7 años.
-              </p>
-            </div>
-
-            <figure class="especialista__picture">
-              <img
-                src="../img/Especialistas/yoga.jpg"
-                class="especialista__img"
-              />
-            </figure>
-          </section>
-
-          <img
-            src="../img/Especialistas/rightarrow.svg"
-            class="especialista__arrow"
-            id="next"
-          />
-        </div>
-      </section> -->
+      
     </main>
     <script src="../js/script-servicios.js"></script>
     

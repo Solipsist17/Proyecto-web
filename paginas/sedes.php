@@ -1,3 +1,42 @@
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['idUsuario'])) {
+      header("Location: login.php");
+      exit;
+    }
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+        exit;
+    }
+
+    require_once('../conexion/conexion.php');
+
+    function cargarCuenta() {
+        global $conn;
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
+        $result = $conn->query($sql);
+        $usuario = $result->fetch_assoc();
+        return $usuario;
+    }
+    $usuario = cargarCuenta();
+    
+    //var_dump($usuario);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["guardar"])) {
+        global $conn;
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "UPDATE usuario SET nombre='$nombre', apellido='$apellido', email='$email' WHERE idUsuario='$idUsuario'";
+        $conn->query($sql);
+        $usuario = cargarCuenta();
+    }
+?>
 <!DOCTYPE html>
 <?php
 ?>
@@ -45,8 +84,8 @@
               <li><a href="productos.php">Productos</a></li>
               <li><a href="sedes.php">Locales</a></li>
               <li>|</li>
-              <li><?php session_start();
-               $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+              <li><?php
+               $pagina = isset($_SESSION['idUsuario']) ? $usuario['nombre']: "Login" ?>
                 <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
             </ul>
           </nav>
@@ -60,222 +99,6 @@
       </div>
 
       <section class="locales">
-        <!-- <div class="card">
-          <iframe
-            class="mapa"
-            id="mapa1"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.900190329967!2d-77.03036872593565!3d-12.050387941966145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b735f71f4b%3A0x954a6fe36048ea30!2sAv.%20Abancay%20451%2C%20Lima%2015001!5e0!3m2!1ses-419!2spe!4v1681771199915!5m2!1ses-419!2spe"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-          <div class="card-info">
-            <h2>Lima</h2>
-            <p>Direcciones:</p>
-            <div class="lima">
-              <ul>
-                <li>
-                  <a class="direccion" href="#lima" id="1"
-                    >Av. Abancay Nº 451</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#lima" id="2"
-                    >Urb. Mariscal Cáceres Mz. L Lote 30</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#lima" id="3">Jr. Sta. Rosa 179</a>
-                </li>
-                <li>
-                  <a class="direccion" href="#lima" id="4"
-                    >Breña Av. Venezuela Nº 681</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#lima" id="5">Av. Tacna Nº 524</a>
-                </li>
-                <li>
-                  <a class="direccion" href="#lima" id="6"
-                    >Jr. Camaná 370, Lima 15001</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <p>Teléfono:</p>
-            <ul>
-              <li>980756251</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <iframe
-            class="mapa"
-            id="mapa2"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.915971025746!2d-75.7288326258835!3d-14.082137483128403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e28f4455945b%3A0x8b5020187b3eaa5b!2sAv%20San%20Martin%2010%2C%20Ica%2011001!5e0!3m2!1ses-419!2spe!4v1681771417165!5m2!1ses-419!2spe"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-          <div class="card-info">
-            <h2>Ica</h2>
-            <p>Direcciones:</p>
-            <div class="ica">
-              <ul>
-                <li>
-                  <a class="direccion" href="#ica" id="7"
-                    >Av. San Martín Nº 10</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#ica" id="8">Av. Cutervo Nº 123</a>
-                </li>
-                <li>
-                  <a class="direccion" href="#ica" id="9"
-                    >Av. Miguel Grau Nº 200</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#ica" id="10"
-                    >Urb. San Miguel 2 de Mayo</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#ica" id="11">Calle Lima Nº 204</a>
-                </li>
-                <li>
-                  <a class="direccion" href="#ica" id="12"
-                    >Av. Tupac Amaru Nº 1336</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <p>Teléfono:</p>
-            <ul>
-              <li>900141234</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <iframe
-            class="mapa"
-            id="mapa3"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.6858382446844!2d-79.02483192601723!3d-8.13343108142652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d610d66cf7f%3A0x69a696b832fb742!2sAv.%20Primavera%20101%2C%20V%C3%ADctor%20Larco%20Herrera%2013008!5e0!3m2!1ses-419!2spe!4v1681771677872!5m2!1ses-419!2spe"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-          <div class="card-info">
-            <h2>Trujillo</h2>
-            <p>Direcciones:</p>
-            <div class="trujillo">
-              <ul>
-                <li>
-                  <a class="direccion" href="#trujillo" id="13"
-                    >Av. Primavera Nº 101</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#trujillo" id="14"
-                    >Jr. Unión Nº 373</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#trujillo" id="15"
-                    >Garcilaso de la Vega Nº 578</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#trujillo" id="16"
-                    >Calle Los Brillantes Nº 650</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#trujillo" id="17"
-                    >Av. América Sur Nº 4171</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#trujillo" id="18"
-                    >Jr. Independencia Nº 589</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <p>Teléfono:</p>
-            <ul>
-              <li>920031756</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <iframe
-            class="mapa"
-            id="mapa4"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5757963304964!2d-71.54200322581623!3d-16.39555783804326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5afcbdf18f%3A0x6b6dbb44b4e2d34b!2sAv%20La%20Marina%20531%2C%20Arequipa%2004001!5e0!3m2!1ses-419!2spe!4v1681771861785!5m2!1ses-419!2spe"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-          <div class="card-info">
-            <h2>Arequipa</h2>
-            <p>Direcciones:</p>
-            <div class="arequipa">
-              <ul>
-                <li>
-                  <a class="direccion" href="#arequipa" id="19"
-                    >Av. La Marina Nº 531</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#arequipa" id="20"
-                    >Av. José Olaya Nº 106</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#arequipa" id="21"
-                    >Mz D Cerro Colorado</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#arequipa" id="22"
-                    >Calle 28 de Julio Nº 113</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#arequipa" id="23"
-                    >A.h la Alborada</a
-                  >
-                </li>
-                <li>
-                  <a class="direccion" href="#arequipa" id="24"
-                    >Calle El Filtro Nº 501</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <p>Teléfono:</p>
-            <ul>
-              <li>901789434</li>
-            </ul>
-          </div>
-        </div> -->
         <?php include("../php/php-sedes.php")  ?>
       </section>
       

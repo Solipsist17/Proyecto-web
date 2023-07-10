@@ -1,4 +1,42 @@
+<?php 
+    session_start();
 
+    if (!isset($_SESSION['idUsuario'])) {
+      header("Location: login.php");
+      exit;
+    }
+    
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+        exit;
+    }
+
+    require_once('conexion/conexion.php');
+
+    function cargarCuenta() {
+        global $conn;
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
+        $result = $conn->query($sql);
+        $usuario = $result->fetch_assoc();
+        return $usuario;
+    }
+    $usuario = cargarCuenta();
+    
+    //var_dump($usuario);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["guardar"])) {
+        global $conn;
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $idUsuario = $_SESSION['idUsuario'];
+        $sql = "UPDATE usuario SET nombre='$nombre', apellido='$apellido', email='$email' WHERE idUsuario='$idUsuario'";
+        $conn->query($sql);
+        $usuario = cargarCuenta();
+    }
+?>
 <!DOCTYPE html>
 <?php
 ?>
@@ -29,7 +67,7 @@
                   <li><a href="paginas/productos.php">Productos</a></li>
                   <li><a href="paginas/sedes.php">Locales</a></li>
                   <li>|</li>
-                  <li><?php $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
+                  <li><?php $pagina = isset($_SESSION['idUsuario']) ? "Cuenta" : "Login" ?>
                 <a href="paginas/<?= $pagina?>.php"><?= $pagina?></a></li>
                 </ul>
             </nav>

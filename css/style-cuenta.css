@@ -1,54 +1,48 @@
-/* body{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(#141e30,
-    #243b55);
-}  */
+
 .titulo{
     text-align: center;
 }
-
 .login-box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     position: relative;
-
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    height: 60%;
-    padding: 40px;
-
+    width: 600px;
+    height: auto;
+    padding: 20px;
     background: #41414100;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 10px;
-    align-items: center;
-}
-.login-box h3{
-    margin: 0 0 30px;
-    padding: 0;
-    color: #ffffff;
+
 }
 
-.login-box a{
-    text-decoration: none;
-    color: #ffffff;
-} 
 .label-n{
+    outline: none;
+    width: 200px;
+    height: 20%;
     display: block;
+    margin: 0;
 }
 .input-n{
     margin: 1em;
     display: block;
+    flex: 1;
     height: 50px;
-    width: 135px;
+    width: 300px;
     outline: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
     background: #333;
     color: #ffffff;
     border: none;
     border-bottom: 4px solid #1a1a1a;
+    text-align: center;
+    flex-grow: 2;
 }
 /* .input-b{
     height: 50px;
@@ -56,18 +50,17 @@
 } */
 .input-b{
     transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    flex: 1;
+    background-color: #4a4aee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
     border: none;
+    height: 50px;
+    width: 300px;
+    border-radius: 40px;
     /* animation: spin 2s infinite linear; */
 }
-/* @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } */
+
 .input-b:hover{
     background-color: #1a1a1a; 
     color: white;
@@ -77,17 +70,15 @@
 .input-b :active{
     opacity: 0.2;
 }
-/* .input-b ::after{
-    content: "";
-	width: 100%;
-	height: 100%;
-	background: #c4b107;
-	position: absolute;
-	z-index: 1;
-	top: -80px;
-	left: 0;
-	transition: .3s ease-in-out all;  
-} */
-.input-b:hover ::after{
-    top: 0;
+
+.log-out{
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    border-radius: 40px;
+    margin-left: 45%;
+    margin-right: 45%;
+    text-align: center;
 }

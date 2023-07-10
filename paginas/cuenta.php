@@ -36,11 +36,7 @@
         $conn->query($sql);
         $usuario = cargarCuenta();
     }
-
-    
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,16 +71,21 @@
               <li><a href="productos.php">Productos</a></li>
               <li><a href="sedes.php">Locales</a></li>
               <li>|</li>
-              <li><?php $pagina = isset($_SESSION['idUsuario']) ? "cuenta" : "login" ?>
-                <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
+              <li><a href="<?= $pagina?>.php"><?php $pagina = isset($_SESSION['idUsuario']) ?  $usuario['nombre']: "Login" ?>
+                <?= $pagina?></a>
+                <ul>
+                  <li><a href=""><?php $pagina = isset($_SESSION['idUsuario']) ? "Cerrar Sesion" : "Registrarse" ?></a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
     </header>
-    <h1 class="titulo">Mi cuenta</h1>
-    <div class="login-box">
-      <h3>Información de la cuenta</h3>
-    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+    <main>
+      <h1 class="titulo">Mi cuenta</h1>
+    
+
+    <form class="login-box" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
         <label for="nombre" class="label-n" >Nombre</label>
         <input id="nombre" class="input-n" name="nombre" value="<?= $usuario['nombre']; ?>" type="text" required>
         <label for="apellido" class="label-n">Apellido</label>
@@ -96,14 +97,17 @@
         
         <!-- <button  type="submit" value="Guardar" name="guardar" ><span>Guardar</span></button> -->
         <input type="submit" class="input-b" value="Guardar" name="guardar">
-      
+        
         
     </form>
     <br>
     <!-- <input type="button" value="Cambiar contraseña"> -->
-    <a href="?logout=true" class="">Cerrar sesión</a>
-    </div>
+    <a href="?logout=true" class="log-out">Cerrar sesión</a>
     
-
+    
+    <br>
+    <br>
+    </main>
+    
 </body>
 </html>
