@@ -1,0 +1,46 @@
+/* Estilos para la tabla de artículos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+   
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+    /* Estilos para los formularios de agregar y modificar
+   artículos */
+form {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+
+select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    
+input[type="submit"]:hover {
+    background-color: #555;
+}
+   
+    /* Estilos para los mensajes de error */
+.error-message {
+    color: #ff0000;
+    margin-bottom: 10px;
+}   

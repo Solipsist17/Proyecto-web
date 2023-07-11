@@ -1,43 +1,4 @@
 <?php include_once '../php/php-registro-login.php' ?>
-<?php 
-    session_start();
-
-    if (!isset($_SESSION['idUsuario'])) {
-      header("Location: login.php");
-      exit;
-    }
-    
-    if (isset($_GET['logout'])) {
-        session_destroy();
-        header("Location: login.php");
-        exit;
-    }
-
-    require_once('../conexion/conexion.php');
-
-    function cargarCuenta() {
-        global $conn;
-        $idUsuario = $_SESSION['idUsuario'];
-        $sql = "SELECT * FROM usuario WHERE idUsuario = '$idUsuario'";
-        $result = $conn->query($sql);
-        $usuario = $result->fetch_assoc();
-        return $usuario;
-    }
-    $usuario = cargarCuenta();
-    
-    //var_dump($usuario);
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["guardar"])) {
-        global $conn;
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $email = $_POST['email'];
-        $idUsuario = $_SESSION['idUsuario'];
-        $sql = "UPDATE usuario SET nombre='$nombre', apellido='$apellido', email='$email' WHERE idUsuario='$idUsuario'";
-        $conn->query($sql);
-        $usuario = cargarCuenta();
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,7 +48,7 @@
             <li><a href="sedes.php">Locales</a></li>
             <li>|</li>
             <!-- Modificar el nombre de formulario.php para que sea dinámico -->
-            <li><?php $pagina = isset($_SESSION['idUsuario']) ? $usuario['nombre'] : "Login" ?>
+            <li><?php $pagina = isset($_SESSION['idUsuario']) ? "Cuenta" : "Login" ?>
                 <a href="<?= $pagina?>.php"><?= $pagina?></a></li>
           </ul>
         </nav>
