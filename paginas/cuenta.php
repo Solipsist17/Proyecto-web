@@ -5,6 +5,11 @@
       header("Location: login.php");
       exit;
     }
+
+    if ($_SESSION['idRol'] == 1) {
+      header("Location: administrador-indice.php");
+      exit;
+    }
     
     if (isset($_GET['logout'])) {
         session_destroy();
@@ -71,7 +76,7 @@
               <li><a href="productos.php">Productos</a></li>
               <li><a href="sedes.php">Locales</a></li>
               <li>|</li>
-              <li><a href="<?= $pagina?>.php"><?php $pagina = isset($_SESSION['idUsuario']) ?  $usuario['nombre']: "Login" ?>
+              <li><a href="<?= $pagina?>.php"><?php $pagina = isset($_SESSION['idUsuario']) ?  "Cuenta" : "Login" ?>
                 <?= $pagina?></a>
                 <ul>
                   <li><a href=""><?php $pagina = isset($_SESSION['idUsuario']) ? "Cerrar Sesion" : "Registrarse" ?></a></li>

@@ -1,10 +1,17 @@
 <?php 
+    session_start();
+    // Verificar si el usuario ha iniciado sesión
+    if (!isset($_SESSION['idUsuario'])) {
+        header("Location: login.php");
+        exit;
+    }
+
     require_once("../conexion/conexion.php");
     // Función para obtener todos los artículos de la base de datos
-    session_start();
+    //session_start();
     function obtenerProductos() {
         global $conn;
-        $sql = "SELECT * FROM productos";
+        $sql = "SELECT * FROM producto";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
         $productos = array();

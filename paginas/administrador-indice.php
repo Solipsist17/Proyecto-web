@@ -1,17 +1,19 @@
 <?php
-session_start();
+  session_start();
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['UsuarioId'])) {
-  header("Location: ../php/php-registro-login.php");
-  exit;
-}
-// Cerrar sesión si se envió la solicitud de cierre de sesión
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header("Location: ../php/php-registro-login.php");
+  // Verificar si el usuario ha iniciado sesión
+  if (!isset($_SESSION['idUsuario'])) {
+    header("Location: login.php");
     exit;
   }
+  // Cerrar sesión si se envió la solicitud de cierre de sesión
+  if (isset($_GET['logout'])) {
+      session_destroy();
+      header("Location: login.php");
+      exit;
+  }
+
+  //require_once('../conexion/conexion.php');
 
 ?>
 
@@ -19,7 +21,7 @@ if (isset($_GET['logout'])) {
 <html>
 <head>
     <title>Pagina de Bienvenida</title>
-<link rel="stylesheet" type="text/css" href ="index.css">
+<link rel="stylesheet" type="text/css" href ="../css/style-administrador.css">
 </head>
 <body>
 <header>
@@ -28,7 +30,7 @@ if (isset($_GET['logout'])) {
 
   </header>
       <main>
-        <?php if (isset($_SESSION['UsuarioId'])) { ?>
+        <?php if (isset($_SESSION['idUsuario'])) { ?>
         <h2>Opciones:</h2>
         <ul>
         <li><a href="../paginas/administrador-productos.php">Mantenimiento de Artículos</a></li>
