@@ -20,8 +20,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pagina de Bienvenida</title>
-<link rel="stylesheet" type="text/css" href ="../css/style-administrador.css">
+    <title>Pagina de Administrador</title>
+<link rel="stylesheet" type="text/css" href ="../css/style-administrador-indice.css">
 </head>
 <body>
 <header>
@@ -30,16 +30,32 @@
 
   </header>
       <main>
-        <?php if (isset($_SESSION['idUsuario'])) { ?>
-        <h2>Opciones:</h2>
-        <ul>
-        <li><a href="../paginas/administrador-productos.php">Mantenimiento de Artículos</a></li>
-        <!-- Agrega más opciones -->
-        </ul>
-        <?php } ?>
+        <div class="container-G">
+          <div>
+            <img src="../img/Inicio/imagen_menu18.jpg" alt="" height="465px" width="300px">
+          </div>
+          <div class= "container-lista">
+          <?php if (isset($_SESSION['idUsuario'])) { ?>
+          <h2>Opciones</h2>
+          <ul>
+          <li><a href="../paginas/administrador-productos.php">Mantenimiento de Artículos</a></li>
+          <li><a href="../paginas/administrador-usuarios.php">Administrador de cuentas</a></li>
+          <!-- Agrega más opciones -->
+          </ul>
+          <?php } ?>
+          </div>
+          <div>
+            <img src="../img/Inicio/imagen_menu19.jpg" alt="" height="465px" width="300px">
+          </div>
+        </div>
+        
+        
       </main>
     <footer>
-     Derechos reservados &copy; <?php echo date('Y'); ?>
+      <div class="cuadrito">
+        <p>&copy; 1997-2023, Gym Herculiano. Todos lo derechos reservados <?php echo date('Y'); ?></p>
+      </div>
+    
     </footer>
 </body>
 </html>

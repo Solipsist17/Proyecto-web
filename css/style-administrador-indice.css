@@ -1,0 +1,79 @@
+/* Aquí puedes agregar tus estilos personalizados */
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  h2{
+    color: #fff;
+  }
+  .container-G{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+/*  align-items: center; */
+    justify-content: space-around;
+    align-content: center;
+  }
+  .container-lista {
+    
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+   
+    position: relative;
+  }
+  .container-lista a{
+    display: block;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  li a:hover {
+    background-color: #555;
+  }
+  footer {
+    background-color: #333;
+    position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    bottom: 0;
+    border-radius: 20px;
+  }
+  
+  .logout-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  .logout-link:hover{
+    color: #1a1a1a;
+  }
+  li{
+    list-style-type: none;
+  }
+
+  
