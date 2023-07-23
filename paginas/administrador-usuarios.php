@@ -9,7 +9,7 @@ include_once("../conexion/conexion.php");
 //Obtener usuarios
 function obtenerUsuarios() {
   global $conn;
-  $sql = "SELECT usuario.idUsuario, usuario.nombre AS nombreUsuario, usuario.apellido, usuario.email, rol.nombre AS nombreRol FROM usuario
+  $sql = "SELECT usuario.idUsuario, usuario.nombre AS nombreUsuario, usuario.apellido, usuario.email, usuario.idRol, rol.nombre AS nombreRol FROM usuario
   LEFT JOIN rol ON usuario.idRol = rol.idRol";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -49,6 +49,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
   $conn->query($sql);
 }
 $usuarios = obtenerUsuarios();
+
+// Cargar categorías
+function obtenerRoles() {
+  global $conn;
+  $sql = "SELECT idRol, nombre FROM rol";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+      $roles = array();
+  while ($row = $result->fetch_assoc()) {
+      $roles[] = $row;
+  }
+      return $roles;
+  } else {
+      return array();
+  }
+}
+$roles = obtenerRoles();  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,7 +124,11 @@ $usuarios = obtenerUsuarios();
                 <input type="text" name="nombre" value="<?php echo $fila['nombreUsuario']; ?>" required>
                 <input type="text" name="descripcion" value="<?php echo $fila['apellido']; ?>" required>
                 <input type="email" name="email" value="<?php echo $fila['email']; ?>" required>
-                
+                <select name="categoria" id=""> <!-- Traer los datos de categorías de la bd -->
+                    <?php foreach ($roles as $rol) { ?>
+                        <option value="<?= $rol['idRol']?>" <?php if ($fila['idRol'] == $rol['idRol']) echo "selected"; ?> ><?= $rol['nombre'] ?></option>
+                    <?php } ?>
+                </select>
                 <input type="submit" name="modificar" value="Modificar"> 
             </form> 
         </td>
