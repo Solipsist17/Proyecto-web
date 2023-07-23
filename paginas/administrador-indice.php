@@ -38,8 +38,8 @@
           <?php if (isset($_SESSION['idUsuario'])) { ?>
           <h2>Opciones</h2>
           <ul>
-          <li><a href="../paginas/administrador-productos.php">Mantenimiento de Artículos</a></li>
-          <li><a href="../paginas/administrador-usuarios.php">Administrador de cuentas</a></li>
+          <li><a href="../paginas/administrador-productos.php">Mantenimiento de Productos</a></li>
+          <li><a href="../paginas/administrador-usuarios.php">Administrador de Cuentas</a></li>
           <!-- Agrega más opciones -->
           </ul>
           <?php } ?>
