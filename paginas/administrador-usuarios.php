@@ -22,7 +22,32 @@ function obtenerUsuarios() {
       return array();
   }
 }   
+ // Modificar un producto existente
+ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
+  $idUsuario = $_POST["idUsuario"];
+  $nombre = $_POST["nombre"];
+  $apellido = $_POST["apellido"];
+  $email = $_POST["email"];
+  
+  $sql = "UPDATE usuario SET nombre=?, apellido=?, email=? WHERE idUsuario=?";
+            
+  $stmt = $conn->prepare($sql);
+            
+  $stmt->bind_param("isss", $idUsuario, $nombre, $apellido, $email);
+            
+  if ($stmt->execute()) {
+    echo "Usuario modificado exitosamente.";
+  } else {
+    echo "Error al modificar el usuario: " . $stmt->error;
+  }
 
+}
+// Eliminar un usuario
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+  $idUsuario = $_POST["idUsuario"];
+  $sql = "DELETE FROM usuario WHERE idUsuario=$idUsuario";
+  $conn->query($sql);
+}
 $usuarios = obtenerUsuarios();
 ?>
 <!DOCTYPE html>
@@ -58,7 +83,7 @@ $usuarios = obtenerUsuarios();
               <th>Apellido</th>
               <th>E-mail</th>
               <th>Rol</th>
-
+              <th>Acciones</th>
             </tr>
           </thead>
  
@@ -73,10 +98,19 @@ $usuarios = obtenerUsuarios();
               <td><?php echo $fila['email']; ?></td>
               <td><?php echo $fila['nombreRol']; ?></td>
               <td>
-
-
-
-             </td>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <input type="hidden" name="idUsuario" value="<?php echo $fila['idUsuario']; ?>">
+                <input type="submit" name="eliminar" value="Eliminar">
+            </form>
+            
+                <input type="hidden" name="idUsuario" value="<?php echo $fila['idUsuario']; ?>">
+                <input type="text" name="nombre" value="<?php echo $fila['nombreUsuario']; ?>" required>
+                <input type="text" name="descripcion" value="<?php echo $fila['apellido']; ?>" required>
+                <input type="email" name="email" value="<?php echo $fila['email']; ?>" required>
+                
+                <input type="submit" name="modificar" value="Modificar"> 
+            </form> 
+        </td>
            </tr>
            <?php } ?> 
 
