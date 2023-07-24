@@ -180,6 +180,7 @@ href="../css/style-administrador-productos.css">
         <th>Precio</th>
         <th>Imagen</th>
         <th>Categoría</th>
+        <th>Acciones</th>
     </tr>
 
     <?php foreach ($productos as $fila) { ?> 
