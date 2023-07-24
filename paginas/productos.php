@@ -134,6 +134,7 @@
         <ul>
           <li>|</li>
           <li><a id="" href="productos.php?categoria=todos#producto">todos</a></li>
+          <li>|</li>
           <?php foreach ($categorias as $fila) { ?>
             <li><a id="" href="productos.php?categoria=<?=$fila['nombre']?>#producto"><?=$fila['nombre']?></a></li>
             <li>|</li>
