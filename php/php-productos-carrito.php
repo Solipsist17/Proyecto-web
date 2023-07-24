@@ -3,9 +3,29 @@ session_start();
 //session_unset();
 //unset($_SESSION['productosCarrito']);
 
-include("php-productos-data.php");
+//include("php-productos-data.php");
 
-$productosCarrito = isset($_SESSION['productosCarrito']) ? $_SESSION['productosCarrito'] : [];
+
+// Hacer la consulta a la BD
+require_once("../conexion/conexion.php");
+function obtenerProductos() {
+  global $conn;
+  $sql = "SELECT idProducto, nombre, descripcion, precio, imagen, idCategoria FROM producto";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+      $productos = array();
+      while ($row = $result->fetch_assoc()) {
+        $productos[] = $row;
+      }
+      return $productos;
+  } else {
+      return array();
+  }
+}
+
+//$categoria = "todos";
+$productos = obtenerProductos();
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") { 
 
@@ -18,31 +38,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id = $data["id"];
     $accion = $data["accion"];
 
-    foreach ($todos as $elemento) {
-        if ($elemento['id'] == $id) { // buscamos por su id
+    $productosCarrito = isset($_SESSION['productosCarrito']) ? $_SESSION['productosCarrito'] : [];
+
+
+    foreach ($productos as $elemento) {
+        if ($elemento['idProducto'] == $id) { // buscamos por su id
             $producto = [
-                "id" => $elemento['id'],
-                "categoria" => $elemento['categoria'], 
+                "idProducto" => $elemento['idProducto'],
+                "idCategoria" => $elemento['idCategoria'], 
                 "nombre" => $elemento['nombre'], 
                 "descripcion" => $elemento['descripcion'], 
                 "precio" => $elemento['precio'], 
-                "imagen" => $elemento['imagen']
+                "imagen" => base64_encode($elemento['imagen'])
             ];
             
             if ($accion == "agregar") {
 
-                if (!in_array($producto, $productosCarrito)) { // verificamos si no existe en el array carrito
+                $existe = false;
+                foreach ($productosCarrito as $item) { 
+                    if ($item['idProducto'] == $id) { // Verificamos si existe 
+                        $existe=true;
+                    }    
+                }
+                if (!$existe) { // si no existe entonces lo agregamos
                     array_push($productosCarrito, $producto);
                     $_SESSION['productosCarrito'] = $productosCarrito;
                 }
             
             } elseif ($accion == "quitar") {
 
-                if (in_array($producto, $productosCarrito)) { // Verificamos si existe en el array carrito
-                    $indice = array_search($producto, $productosCarrito);
-                    unset($productosCarrito[$indice]);
-                    $productosCarrito = array_values($productosCarrito); // reorganizamos los índices
-                    $_SESSION['productosCarrito'] = $productosCarrito;
+                foreach ($productosCarrito as $clave => $item) { 
+                    if ($item['idProducto'] == $id) { // Verificamos si existe 
+                        $indice = $clave;
+                        unset($productosCarrito[$indice]);
+                        $productosCarrito = array_values($productosCarrito); // reorganizamos los índices
+                        $_SESSION['productosCarrito'] = $productosCarrito;
+                    }    
                 }
             }
 
@@ -51,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $subtotal = calcularSubTotal($productosCarrito); // calculamos el subtotal
-
+    //unset($productosCarrito);
     $data = [
         'productosCarrito' => $productosCarrito,
         'subtotal' => $subtotal

@@ -264,8 +264,8 @@ function agregarCarrito(item) {
         
         //let subtotal = data.subTotal;
 
-        productosCarrito = data.productosCarrito; // Agregamos al array para construirlo con esos datos
-        console.log(data.productosCarrito);
+        //productosCarrito = data.productosCarrito; // Agregamos al array para construirlo con esos datos
+        console.log(data);
 
         cargarArrayCarrito(data.productosCarrito, data.subtotal); /* Cargamos los datos del producto en el carrito */
     });
@@ -311,7 +311,10 @@ function cargarArrayCarrito (productosCarrito, subtotal) { // Creamos los elemen
         let img = document.createElement("img");
         img.id = "imgSeleccionada";
         img.className = "producto-miniatura";
-        img.src =  productosCarrito[i].imagen;
+
+        /* echo '<img src="data:' . $tipoImagen . ';base64,' . $imagenCodificada . '" alt="Imagen" width="100px" height="100px">'; */
+        img.src =  `data:${obtenerTipoImagen(productosCarrito[i].imagen)};base64,${productosCarrito[i].imagen}`;
+
         imagenSeleccion.appendChild(img);
         let selectUnidades = document.createElement("select");
         selectUnidades.className = "select-unidades";
@@ -324,8 +327,9 @@ function cargarArrayCarrito (productosCarrito, subtotal) { // Creamos los elemen
         productoEliminar.className = "producto-eliminar";
         let imgEliminar = document.createElement("img");
         imgEliminar.src = "../img/Productos/eliminar.png";
+        imgEliminar.id = productosCarrito[i].idProducto;
         imgEliminar.addEventListener("click", () => { // Al clickear se quita del carrito 
-            quitarCarrito(productosCarrito[i]); // le pasamos el producto
+            quitarCarrito(imgEliminar); // le pasamos el producto
         });
         productoEliminar.appendChild(imgEliminar);
         let precioUnitario = document.createElement("p");
@@ -350,56 +354,11 @@ function cargarArrayCarrito (productosCarrito, subtotal) { // Creamos los elemen
     spanSubTotal.textContent += "SubTotal: " + "S/" + subtotal.toFixed(2);
 }
 
+function obtenerTipoImagen(base64) {
+    const tipo = base64.match(/^data:(.*);base64,/);
+    return tipo ? tipo[1] : null;
+}
 
-/* function cargarArrayCarrito (productosCarrito) { // Creamos los elementos del array carrito 
-    let seleccionContainer = document.getElementById("seleccionContainer"); 
-    seleccionContainer.innerHTML = ""; // Limpiamos el contenedor 
-    for (let i=0; i < productosCarrito.length; i++) {
-        let productoSeleccion = document.createElement("div");
-        productoSeleccion.className = "producto-seleccion";
-
-        let nombreProducto = document.createElement("p"); 
-        nombreProducto.id = "nombreProducto";
-        nombreProducto.textContent = productosCarrito[i].querySelector(".producto-marca").textContent;
-        let imagenSeleccion = document.createElement("div");
-        imagenSeleccion.className = "imagen-seleccion";
-        let img = document.createElement("img");
-        img.id = "imgSeleccionada";
-        img.className = "producto-miniatura";
-        img.src =  productosCarrito[i].querySelector(".producto-miniatura").src;
-        imagenSeleccion.appendChild(img);
-        let selectUnidades = document.createElement("select");
-        selectUnidades.className = "select-unidades";
-        for (let j=0; j < 5; j++) {
-            let option = document.createElement("option");
-            option.textContent = j+1;
-            selectUnidades.appendChild(option);
-        }
-        let productoEliminar = document.createElement("div");
-        productoEliminar.className = "producto-eliminar";
-        let imgEliminar = document.createElement("img");
-        imgEliminar.src = "../img/Productos/eliminar.png";
-        imgEliminar.addEventListener("click", () => { // Al clickear se quita del carrito 
-            quitarCarrito(i);
-        });
-        productoEliminar.appendChild(imgEliminar);
-        let precioUnitario = document.createElement("p");
-        precioUnitario.className = "precio-unitario";
-        precioUnitario.textContent = productosCarrito[i].querySelector(".precio").textContent;
-
-        productoSeleccion.appendChild(nombreProducto);
-        productoSeleccion.appendChild(imagenSeleccion);
-        productoSeleccion.appendChild(selectUnidades);
-        productoSeleccion.appendChild(productoEliminar);
-        productoSeleccion.appendChild(precioUnitario);
-
-        seleccionContainer.appendChild(productoSeleccion);
-    }
-
-    // AQUI ACTUALIZAR SUBTOTAL Y PRECIO DE ENVIO 
-    //let subTotal = document.querySelector(".subtotal");
-    calcularSubTotal(productosCarrito);
-} */
 
 function calcularSubTotal(productosCarrito) {
     let subTotal = 0;
