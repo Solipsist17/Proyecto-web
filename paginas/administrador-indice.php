@@ -41,6 +41,7 @@
           <li><a href="../paginas/administrador-productos.php">Mantenimiento de Productos</a></li>
           <li><a href="../paginas/administrador-usuarios.php">Administrador de Cuentas</a></li>
           <li><a href="../paginas/administrador-sedes.php">Mantenimiento de sedes</a></li>
+          <li><a href="../paginas/administrador-servicios.php">Mantenimiento de servicios</a></li>
           <!-- Agrega más opciones -->
           </ul>
           <?php } ?>

@@ -28,8 +28,8 @@ $sedes = obtenerSedes();
 // Modificar un producto existente
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
     $idSede = $_POST["idSede"];
-    $nombre = $_POST["nombre"];
-    $direccion = $_POST["idDireccion"];
+    $nombre = $_POST["nombreSede"];
+    $direccion = $_POST["idDireccionSede"];
     $telefono = $_POST["telefono"];
     $mapa = $_POST["mapa"];
     
@@ -118,11 +118,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
               <td><?php echo $fila['mapa']; ?></td>
               <td><?php echo $fila['nombreDireccion']; ?></td>
               <td>
-              <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+              <form method="post" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <input type="hidden" name="idSede" value="<?php echo $fila['idSede']; ?>">
                 <input type="submit" name="eliminar" value="Eliminar">
-            </form>
-            
+
                 <input type="hidden" name="idSede" value="<?php echo $fila['idSede']; ?>">
                 <input type="text" name="nombreSede" value="<?php echo $fila['nombreSede']; ?>" required>
                 <input type="number" name="telefono" value="<?php echo $fila['telefono']; ?>" required>
@@ -133,7 +132,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
                     <?php } ?>
                 </select>
                 <input type="submit" name="modificar" value="Modificar"> 
-            </form> 
+            </form>
+            
+                
+            
         </td>
            </tr>
            <?php } ?> 

@@ -22,8 +22,9 @@ function obtenerUsuarios() {
       return array();
   }
 }   
- // Modificar un producto existente
- if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
+
+ // Modificar un usuario existente
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar"])) {
   $idUsuario = $_POST["idUsuario"];
   $nombre = $_POST["nombre"];
   $apellido = $_POST["apellido"];
@@ -40,8 +41,8 @@ function obtenerUsuarios() {
   } else {
     echo "Error al modificar el usuario: " . $stmt->error;
   }
-
 }
+
 // Eliminar un usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
   $idUsuario = $_POST["idUsuario"];
@@ -91,7 +92,6 @@ $roles = obtenerRoles();
 		</div>
 		<br>
            <br>
-			</form>
       <table class="table table-striped table-dark " id= "table_id">
         <thead>    
             <tr>
@@ -118,11 +118,9 @@ $roles = obtenerRoles();
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <input type="hidden" name="idUsuario" value="<?php echo $fila['idUsuario']; ?>">
                 <input type="submit" name="eliminar" value="Eliminar">
-            </form>
-            
                 <input type="hidden" name="idUsuario" value="<?php echo $fila['idUsuario']; ?>">
                 <input type="text" name="nombre" value="<?php echo $fila['nombreUsuario']; ?>" required>
-                <input type="text" name="descripcion" value="<?php echo $fila['apellido']; ?>" required>
+                <input type="text" name="apellido" value="<?php echo $fila['apellido']; ?>" required>
                 <input type="email" name="email" value="<?php echo $fila['email']; ?>" required>
                 <select name="categoria" id=""> <!-- Traer los datos de categorías de la bd -->
                     <?php foreach ($roles as $rol) { ?>
@@ -130,7 +128,9 @@ $roles = obtenerRoles();
                     <?php } ?>
                 </select>
                 <input type="submit" name="modificar" value="Modificar"> 
-            </form> 
+            </form>
+            
+                
         </td>
            </tr>
            <?php } ?> 
